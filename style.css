@@ -615,3 +615,64 @@ p {
 }
 
 
+
+/* Медиа-запросы для адаптации под мобильные устройства */
+
+@media (max-width: 1024px) {
+    body {
+        font-size: 16px;
+    }
+
+    .container {
+        width: 95%;
+    }
+
+    .banner {
+        height: 200px;
+        text-align: center;
+    }
+
+    .banner h1 {
+        font-size: 28px;
+    }
+
+    .lessons-grid {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .lesson {
+        max-width: 90%;
+    }
+
+    .slider img {
+        width: 100%;
+        height: auto;
+    }
+
+    .chat-wrapper {
+        flex-direction: column;
+    }
+
+    #contacts {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+    body {
+        font-size: 14px;
+    }
+
+    .banner h1 {
+        font-size: 24px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .lesson {
+        max-width: 100%;
+    }
+}
