@@ -628,12 +628,20 @@ p {
     }
 
     .banner {
-        height: 200px;
+        height: 250px; /* Чуть больше высота */
         text-align: center;
+        padding: 20px;
     }
 
     .banner h1 {
-        font-size: 28px;
+        font-size: 32px; /* Чуть больше, чтобы не терялось */
+    }
+
+    .about-text {
+        max-width: 80vw;
+        margin: 0 auto;
+        font-size: 16px;
+        padding: 15px;
     }
 
     .lessons-grid {
@@ -645,7 +653,7 @@ p {
     }
 
     .slider img {
-        width: 100%;
+        max-width: 100%;
         height: auto;
     }
 
@@ -663,8 +671,17 @@ p {
         font-size: 14px;
     }
 
+    .banner {
+        height: 200px;
+        padding: 10px;
+    }
+
     .banner h1 {
-        font-size: 24px;
+        font-size: 26px;
+    }
+
+    .banner p {
+        font-size: 14px;
     }
 
     nav ul {
@@ -672,7 +689,214 @@ p {
         text-align: center;
     }
 
+    .about-text {
+        max-width: 90vw;
+        padding: 10px;
+        font-size: 14px;
+    }
+
     .lesson {
         max-width: 100%;
+    }
+
+    .slider img {
+        max-width: 100%;
+        height: auto;
+    }
+}
+
+/* Медиа-запросы для блока с уроками */
+
+@media (max-width: 1024px) {
+    .lessons-grid {
+        grid-template-columns: repeat(2, 1fr); /* Два урока в ряд для планшетов */
+        gap: 15px;
+    }
+
+    .lesson {
+        max-width: 90%;
+        margin: 0 auto;
+    }
+
+    .lesson img {
+        width: 100%;
+        height: auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .lessons-grid {
+        grid-template-columns: repeat(1, 1fr); /* Один урок в ряд для телефонов */
+    }
+
+    .lesson h3 {
+        font-size: 18px;
+    }
+
+    .lesson p {
+        font-size: 14px;
+    }
+
+    .buy-button, .free-lesson-button {
+        width: 100%; /* Кнопки на всю ширину */
+        font-size: 16px;
+        padding: 10px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .chat-wrapper {
+        flex-direction: column; /* Размещаем блоки один под другим */
+        align-items: center;
+    }
+
+    .left-panel, .chat-container {
+        width: 90%;
+        max-width: 600px;
+    }
+
+    .left-panel h2 {
+        font-size: 18px;
+        text-align: center;
+    }
+
+    #edit-info-btn, #save-info-btn {
+        width: 100%; /* Кнопки на всю ширину */
+        padding: 10px;
+    }
+}
+
+@media (max-width: 600px) {
+    .left-panel, .chat-container {
+        width: 100%; /* Растягиваем блоки на всю ширину */
+    }
+
+    .left-panel {
+        padding: 10px;
+    }
+
+    .chat-container {
+        height: auto;
+        padding: 10px;
+    }
+
+    #chat-controls {
+        flex-direction: column;
+    }
+
+    #chat-input {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    #send-btn, #clear-btn {
+        width: 100%; /* Кнопки чата на всю ширину */
+    }
+}
+
+@media (max-width: 1024px) {
+    .chat-wrapper {
+        flex-direction: column; /* Размещаем элементы вертикально */
+        align-items: center;
+    }
+
+    .chat-container {
+        width: 90%;
+        max-width: 600px;
+        padding: 15px;
+    }
+
+    #chat-box {
+        max-height: 300px;
+        overflow-y: auto;
+    }
+}
+
+@media (max-width: 600px) {
+    .chat-container {
+        width: 100%;
+        padding: 10px;
+    }
+
+    #chat-controls {
+        flex-direction: column;
+    }
+
+    #chat-input {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    #send-btn, #clear-btn, .moderator-login {
+        width: 100%; /* Кнопки растягиваются */
+        padding: 12px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .chat-wrapper {
+        flex-direction: column; /* Размещаем элементы вертикально */
+        align-items: center;
+    }
+
+    .chat-container {
+        width: 90%;
+        max-width: 600px;
+        padding: 15px;
+    }
+
+    #chat-box {
+        max-height: 300px;
+        overflow-y: auto;
+    }
+}
+
+@media (max-width: 600px) {
+    .chat-container {
+        width: 100%;
+        padding: 10px;
+    }
+
+    #chat-controls {
+        flex-direction: column;
+    }
+
+    #chat-input {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    #send-btn, #clear-btn, .moderator-login {
+        width: 100%; /* Кнопки растягиваются */
+        padding: 12px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 1024px) {
+    #contacts {
+        grid-template-columns: repeat(2, 1fr);
+        text-align: center;
+    }
+}
+
+@media (max-width: 600px) {
+    #contacts {
+        grid-template-columns: 1fr;
+        padding: 20px;
+        text-align: center;
+    }
+
+    .contact-item {
+        padding: 15px;
+    }
+
+    .contact-item i {
+        font-size: 20px;
+    }
+
+    .contact-item p, .contact-item a {
+        font-size: 14px;
     }
 }
