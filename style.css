@@ -198,6 +198,22 @@ body {
     border-radius: 5px; /* Скругление углов фона */
 }
 
+/* Медиа-запрос для мобильных устройств на страницах уроков */
+@media (max-width: 768px) {
+    /* Для заголовка */
+    .lesson-page .banner-content h1 {
+        font-size: 22px; /* Чуть больше заголовок */
+        transform: translateX(500px); /* Сдвигаем заголовок вправо */
+    }
+
+    /* Для параграфа */
+    .lesson-page .banner-content p {
+        font-size: 16px; /* Размер для параграфа */
+        transform: translateX(500px) !important; /* Сдвигаем параграф вправо */
+        margin-top: 10px; /* Добавляем отступ сверху */
+    }
+}
+
 
 /* Стили для banner - конец */
 
@@ -604,8 +620,8 @@ p {
 
 
 
-
 /* Медиа-запросы для адаптации под мобильные устройства */
+
 
 /* Баннер начало */
 @media (max-width: 768px) {
@@ -615,7 +631,7 @@ p {
         height: 200px; /* Высота баннера */
         display: flex;
         align-items: center;
-        justify-content: center; /* Центрируем контент */
+        justify-content: right; /* Центрируем контент */
         text-align: center; /* Центрируем текст */
         padding: 0 10px; /* Немного отступов по бокам */
         position: relative;
@@ -628,7 +644,7 @@ p {
         position: absolute;
         left: 50%;
         top: 50%;
-        transform: translateX(-180%) translateY(-50%); /* Сдвигаем влево на 200% */
+        transform: translateX(-50%) translateY(-50%); /* Центрируем текст по горизонтали и вертикали */
     }
 
     .banner-content h1, .banner-content p {
@@ -640,15 +656,29 @@ p {
     }
 
     .banner-content h1 {
-        font-size: 18px; /* Чуть больше заголовок */
+        font-size: 22px; /* Чуть больше заголовок */
     }
+
     .banner-content p {
-        transform: translateX(50%); /* Сдвигаем параграф вправо */
+        font-size: 16px; /* Размер для параграфа */
+    }
+}
+
+/* Медиа-запрос для мобильных устройств */
+@media (max-width: 768px) {
+    .banner-content h1 {
+        font-size: 22px; /* Чуть больше заголовок */
+        transform: translateX(100px); /* Сдвигаем заголовок вправо */
     }
 
+    .banner-content p {
+        font-size: 16px; /* Размер для параграфа */
+        transform: translateX(220px) !important; /* Сдвигаем параграф вправо */
+        margin-top: 10px; /* Добавляем отступ сверху, если нужно */
+    }
 }
-/* Баннер конец */
 
+/* Баннер главный конец */
 
 
 
@@ -1117,9 +1147,7 @@ p {
         max-width: 100% !important; /* Растягиваем на всю ширину */
     }
 }
-
-
-
+    
 
 /* Контакты */
 @media (max-width: 1024px) {
