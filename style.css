@@ -1165,16 +1165,23 @@ p {
     .lessons-grid {
         display: flex !important;
         flex-direction: column !important;
-        align-items: center !important; /* Центрируем элементы */
-        gap: 15px !important; /* Расстояние между уроками */
+        align-items: center !important;
+        gap: 15px !important;
     }
 
     .lesson {
-        width: 90% !important; /* Уроки занимают 90% ширины экрана */
+        width: 90% !important;
         max-width: 90% !important;
-        aspect-ratio: 2 / 1 !important; /* Высота = половина ширины */
+        height: auto !important;
+        aspect-ratio: 2 / 1 !important;
+        border: 2px solid #ccc !important; /* Серый контур */
+        border-radius: 10px !important; /* Скругление углов */
+        padding: 15px !important; /* Внутренний отступ */
+        background: white !important; /* Фон для контраста */
+        box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1) !important; /* Лёгкая тень */
     }
 }
+
 
     
 
