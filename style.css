@@ -768,7 +768,7 @@ p {
 @media (max-width: 768px) {
     .banner {
         background-position: right center; /* Показываем правую половину */
-        background-size: 202%; /* Увеличиваем масштаб фона */
+        background-size: 200%; /* Увеличиваем масштаб фона */
         height: 200px; /* Высота баннера */
         display: flex;
         align-items: center;
@@ -908,7 +908,7 @@ p {
     }
 
     .buy-button, .free-lesson-button {
-        width: 60%; /* Кнопки на 60% ширину */
+        width: 50%; /* Кнопки на 50% ширину */
         font-size: 16px;
         padding: 10px;
     }
@@ -1113,7 +1113,7 @@ p {
     }
 }
 
- /* слайдер для мобильного */
+ /* слайдер для мобильного */ /* слайдер для мобильного */ /* слайдер для мобильного */
 
  /* Контейнер для слайдера */
 .slider-container {
@@ -1142,12 +1142,20 @@ p {
 
 /* Для мобильных */
 @media (max-width: 600px) {
+    .slider {
+        display: flex;
+        overflow: hidden;
+        gap: 10px; /* Расстояние между изображениями */
+    }
+
     .slider img {
-        width: 100px; /* Чуть меньше для мобильных */
-        max-width: none;
-        height: auto;
+        width: 45vw; /* 45% ширины экрана, чтобы помещалось два изображения */
+        height: calc(45vw * 2); /* Высота в 2 раза больше ширины */
+        object-fit: cover;
     }
 }
+
+
 
 
 
