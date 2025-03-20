@@ -627,7 +627,7 @@ p {
 @media (max-width: 768px) {
     .banner {
         background-position: right center; /* Показываем правую половину */
-        background-size: 202%; /* Увеличиваем масштаб фона */
+        background-size: 200%; /* Увеличиваем масштаб фона */
         height: 200px; /* Высота баннера */
         display: flex;
         align-items: center;
