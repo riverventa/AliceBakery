@@ -1170,10 +1170,12 @@ p {
     }
 
     .lesson {
-        width: 100% !important;
-        max-width: 100% !important; /* Растягиваем на всю ширину */
+        width: 90% !important; /* Уроки занимают 90% ширины экрана */
+        max-width: 90% !important;
+        aspect-ratio: 2 / 1 !important; /* Высота = половина ширины */
     }
 }
+
     
 
 /* Контакты */
