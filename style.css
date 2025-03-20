@@ -1175,13 +1175,9 @@ p {
         max-width: 90% !important;
         height: auto !important;
         aspect-ratio: 2 / 1 !important;
-        border: 2px solid #ccc !important; /* Серый контур */
-        border-radius: 10px !important; /* Скругление углов */
-        padding: 15px !important; /* Внутренний отступ */
-        background: white !important; /* Фон для контраста */
-        box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1) !important; /* Лёгкая тень */
     }
 }
+
 
 
     
