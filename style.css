@@ -1,12 +1,36 @@
+/* ======================================
+   STYLE.CSS - ОСНОВНЫЕ СТИЛИ САЙТА
+   ====================================== */
+
+/* ОГЛАВЛЕНИЕ:
+    1. ОСНОВНЫЕ СТИЛИ (Body, Buttons, Fonts)
+    2. HEADER (ШАПКА САЙТА)
+    3. ОСНОВНОЙ КОНТЕНТ (Тексты, Оформление)
+    4. СЛАЙДЕР С ДЕСЕРТАМИ
+    5. БАННЕР ГЛАВНАЯ СТРАНИЦА (Главная + Уроки)
+    6. БАННЕР ДЛЯ СТРАНИЦ УРОКОВ
+    7. ПРЕЛОАДЕР (Загрузка страницы)
+    8. УРОКИ (Сетка, Карточки, Кнопки)
+    9. ЧАТ (Информационный блок + Чат)
+    10. СЛАЙДЕР
+    11. КОНТЕЙНЕР С КОНТАКТАМИ
+    12. ФУТЕР (ПОДВАЛ САЙТА)
+    13. YOUTUBE VIDEO
+*/
+
+
+
+
+/* ============================
+   ОСНОВНЫЕ СТИЛИ
+   ============================ */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     /* background-color: #f8f3e7; */
     color: #333;
-}
-body {
-    background: #f8f3e7 url('public/images/background.jpg') center/cover no-repeat fixed;
+    background: #f8f3e7 url('images/background.jpg') center/cover no-repeat fixed;
 }
 
 .home-button {
@@ -25,91 +49,143 @@ body {
     background-color: #9cb2a5;
 }
 
-
-/* Стили для прелоадера */
-#preloader {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    background: #fff;
-    z-index: 9999;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+/* ============================
+   HEADER (ШАПКА САЙТА)
+   ============================ */
+   header {
+    background-color: #3ba4b3;
+    color: rgba(134, 98, 6, 0.626);
+    text-align: center;
+    padding: 20px;
 }
 
-.spinner {
-    width: 50px;
-    height: 50px;
-    border: 5px solid rgba(0, 0, 0, 0.1);
-    border-top: 5px solid #8b4513;
-    border-radius: 50%;
-    animation: spin 1s linear infinite;
-    margin-bottom: 20px;
+header h1 {
+    color: #ffffff; /* Белый цвет текста */
 }
 
-@keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+/* ============================
+   ОСНОВНОЙ КОНТЕНТ
+   ============================ */
+main {
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Стили текста */
-.txt-loading {
-    display: flex;
-    font-size: 28px;
-    font-weight: bold;
-    font-family: 'Arial', sans-serif;
+/* Общие стили для текста */
+p {
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+h1, h2 {
     color: #8b4513;
-    letter-spacing: 2px;
+    text-align: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Тёмная тень */
 }
 
-.letters-loading {
-    display: inline-block;
-    opacity: 0;
-    transform: scale(0.8);
-    animation: fadeIn 1.5s ease-in-out infinite;
+/* ============================
+   СЛАЙДЕР С ДЕСЕРТАМИ
+   ============================ */
+#dessert-slider {
+    overflow: hidden;
+    padding: 10px;
+    background: #fff5e1; /* Светлый фон */
 }
 
-/* Добавляем задержку появления для каждой буквы */
-.letters-loading:nth-child(1) { animation-delay: 0s; }
-.letters-loading:nth-child(2) { animation-delay: 0.1s; }
-.letters-loading:nth-child(3) { animation-delay: 0.2s; }
-.letters-loading:nth-child(4) { animation-delay: 0.3s; }
-.letters-loading:nth-child(5) { animation-delay: 0.4s; }
-.letters-loading:nth-child(6) { animation-delay: 0.5s; }
-.letters-loading:nth-child(7) { animation-delay: 0.6s; }
-.letters-loading:nth-child(8) { animation-delay: 0.7s; }
-.letters-loading:nth-child(9) { animation-delay: 0.8s; }
-.letters-loading:nth-child(10) { animation-delay: 0.9s; }
-.letters-loading:nth-child(11) { animation-delay: 1s; }
-.letters-loading:nth-child(12) { animation-delay: 1.1s; }
-.letters-loading:nth-child(13) { animation-delay: 1.2s; }
-.letters-loading:nth-child(14) { animation-delay: 1.3s; }
+.slider-container {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
 
+.slider {
+    display: flex;
+    width: 250%;
+    animation: slideLeft 30s linear infinite;
+    animation-play-state: paused; /* Останавливаем анимацию по умолчанию */
+}
 
-/* Анимация появления букв */
-@keyframes fadeIn {
-    0% {
-        opacity: 0;
-        transform: scale(0.8);
+.slider img {
+    width: 18%; /* Было 30% */
+    max-width: 210px; /* Было 350px */
+    height: auto; /* Сохраняем пропорции */
+    object-fit: cover;
+    aspect-ratio: 9/16; /* Фиксированные пропорции */
+    margin: 10px;
+    border-radius: 10px;
+    transition: transform 0.5s ease-in-out;
+}
+
+/* Анимация движения влево */
+@keyframes slideLeft {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); } /* Сдвигаем на половину */
+}
+
+/* Движение стартует при наведении */
+.slider-container:hover .slider {
+    animation-play-state: running;
+}
+
+/* ============================
+   АДАПТАЦИЯ ДЛЯ МОБИЛЬНЫХ И ПЛАНШЕТОВ
+   ============================ */
+@media (max-width: 1024px) { /* Планшеты */
+    main {
+        max-width: 90%;
+        padding: 15px;
     }
-    50% {
-        opacity: 1;
-        transform: scale(1);
+
+    .slider img {
+        width: 22%;
+        max-width: 180px;
     }
-    100% {
-        opacity: 0;
-        transform: scale(1.2);
+
+    h1, h2 {
+        font-size: 28px;
     }
 }
 
-/* Стили для прелоадера - конец ))*/ 
+@media (max-width: 768px) { /* Смартфоны */
+    main {
+        max-width: 95%;
+        padding: 10px;
+    }
+
+    .slider img {
+        width: 25%;
+        max-width: 160px;
+    }
+
+    h1, h2 {
+        font-size: 24px;
+    }
+}
+
+@media (max-width: 480px) { /* Маленькие смартфоны */
+    main {
+        padding: 8px;
+    }
+
+    .slider img {
+        width: 28%;
+        max-width: 140px;
+    }
+
+    h1, h2 {
+        font-size: 20px;
+    }
+}
 
 
-/* Стили для banner */
-
-.banner {
+/* ============================
+   БАННЕР ГЛАВНАЯ СТРАНИЦА
+   ============================ */
+   .banner {
     background: url('public/images/banner.png') center/cover no-repeat;
     width: 100vw; /* Растягивает баннер на всю ширину окна */
     height: 300px;
@@ -139,30 +215,72 @@ body {
 
 .home-page .banner h1 {
     margin-left: 400px; /* Смещение вправо */
+    font-family: 'Henny Penny', cursive;
+    font-weight: normal;
+    font-size: 64px;
+    line-height: 1.1;
+    color: #5a2d0c;
+    text-transform: capitalize;
 }
 
+
 .home-page .banner p {
-    position: relative;
-    left: 200px; /* Смещение вправо */
+    margin-left: 400px; /* Такой же отступ, как у h1 */
     color: rgb(73, 37, 37);
 }
 
-.home-page .banner h1 {
-    font-family: 'Henny Penny', cursive;
-    font-weight: normal; /* Убираем bold */
-    font-size: 64px; /* Увеличь размер по необходимости */
-    line-height: 1.1; /* Уменьшает расстояние между строками */
-    color: #5a2d0c; /* Темно-коричневый */
-    text-transform: capitalize; /* Только первые буквы заглавные */
+/* Баннер для адаптации под мобильные устройства */
+/* Баннер для адаптации под мобильные устройства */
+@media (max-width: 768px) {
+    .banner {
+        background: url('public/images/banner-mobile.png') center/cover no-repeat;
+        height: 200px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 0 10px;
+        position: relative;
+    }
+
+    .banner-content {
+        width: 100%;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .banner-content h1 {
+        font-size: 72px!important;
+        padding: 2px 4px;
+        background: none;
+        text-shadow: 6px 6px 15px rgba(255, 255, 255, 0.9), 
+                     0px 0px 40px rgba(255, 255, 255, 1);
+        border-radius: 15px;
+        display: inline-block;
+        margin: 0;
+        transform: translateX(-220px); /* Сдвигаем влево */
+    }
+    
+
+    .banner-content p {
+        display: none;
+    }
 }
 
 
-/* Баннер для страниц уроков */
-.lesson-page .banner {
+
+
+/* ============================
+   БАННЕР ДЛЯ СТРАНИЦ УРОКОВ
+   ============================ */
+   .lesson-page .banner {
     background: url('public/images/lesson-banner.png') center/cover no-repeat;
+    position: relative; /* Чтобы ::before работал правильно */
 }
 
-.banner::before {
+.lesson-page .banner::before {
     content: "";
     position: absolute;
     top: 0;
@@ -172,130 +290,165 @@ body {
     background: none;
 }
 
-.banner-content {
+.lesson-page .banner-content {
     position: relative;
-    z-index: 1;
+    display: flex;
+    flex-direction: column; /* Размещаем элементы вертикально */
+    align-items: center; /* Центрируем содержимое */
+    gap: 5px; /* Отступ между h1 и p */
 }
 
-.banner h1 {
+.lesson-page .banner h1 {
     font-size: 36px;
     font-weight: bold;
     text-transform: uppercase;
 }
 
-.banner p {
+.lesson-page .banner p {
     font-size: 20px;
     margin-top: 10px;
 }
 
+.lesson-page .banner-content h1 {
+    background: rgba(0, 0, 0, 0.4); /* Затемняем фон */
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9);
+    padding: 10px 15px;
+    border-radius: 5px;
+    display: inline-block;
+}
+
 /* Оформление текста в баннере на страницах уроков */
-.lesson-banner .banner-content p {
-    color: #fff; /* Белый цвет текста */
-    background: rgba(0, 0, 0, 0.4); /* Полупрозрачный черный фон */
+.lesson-page .banner-content p {
+    color: #fff;
+    background: rgba(0, 0, 0, 0.4);
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
-    padding: 1px 10px; /* Внутренние отступы (сверху/снизу 1px, слева/справа 10px) */
-    display: inline-block; /* Оставляет фон только вокруг текста */
-    border-radius: 5px; /* Скругление углов фона */
+    padding: 1px 10px;
+    display: inline-block;
+    border-radius: 5px;
 }
 
 
-/* Стили для banner - конец */
-
-
-
-header {
-    background-color: #3ba4b3;
-    color: rgba(134, 98, 6, 0.626);
-    text-align: center;
-    padding: 20px;
-}
-
-header h1 {
-    color: #ffffff; /* Новый цвет текста */
-}
-
-
-main {
-    max-width: 900px;
-    margin: 20px auto;
-    padding: 20px;
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-p {
-    line-height: 1.6;
-    margin-bottom: 15px;
-}
-
-
-h1,h2 {
-    color: #8b4513;
-    text-align: center;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Тёмная тень вокруг текста */
-   /* *background-color: rgba(185, 221, 200, 0.8); Чуть затемнённый фон */
-}
-
-
-/* Горизонтально движущиеся изображения десертов */
-#dessert-slider {
-    overflow: hidden;
-    padding: 20px;
-    background: #fff5e1; /* Светлый фон */
-}
-
-.slider-container {
+/* ============================
+   ПРЕЛОАДЕР
+   ============================ */
+   #preloader {
+    position: fixed;
     width: 100%;
-    overflow: hidden;
-    position: relative;
-}
-
-.slider {
+    height: 100%;
+    background: #fff;
+    z-index: 9999;
     display: flex;
-    width: 250%;
-    animation: slideLeft 30s linear infinite; /* Увеличили время анимации на 50% */
-    animation-play-state: paused; /* Останавливаем анимацию по умолчанию */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
-.slider img {
-    width: 30%; /* 4 изображения на экране */
-    max-width: 350px; /* Увеличенный размер */
-    height: 130%; /* Увеличена в 2 раза (относительно предыдущего 80%) */
-    object-fit: cover; /* Обрезает изображение, чтобы оно заполнило контейнер */
-    aspect-ratio: 9/16; /* Поддерживает фиксированные пропорции */
-    margin: 10px;
-    border-radius: 10px;
-    transition: transform 0.5s ease-in-out;
+/* Крутящийся спиннер */
+.spinner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid rgba(0, 0, 0, 0.1);
+    border-top: 5px solid #8b4513;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-bottom: 20px; /* Отступ перед текстом */
 }
 
-
-
-/* Анимация движения влево */
-@keyframes slideLeft {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-50%); } /* Сдвигаем на половину */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
 }
 
-/* Движение стартует при наведении */
-.slider-container:hover .slider {
-    animation-play-state: running;
+/* Анимация текста */
+.txt-loading {
+    display: flex;
+    font-size: 28px;
+    font-weight: bold;
+    font-family: Arial, sans-serif;
+    color: #8b4513;
+    letter-spacing: 2px;
 }
 
-
-/* Уроки */
-
-.lessons-grid {
-    display: grid !important;
-    grid-template-columns: repeat(2, 1fr) !important;
-    gap: 20px !important;
-    max-width: 1000px !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
+/* Буквы появляются по очереди */
+.letters-loading {
+    display: inline-block;
+    opacity: 0;
+    transform: scale(0.8);
+    animation: fadeIn 1.5s ease-in-out infinite;
 }
 
+/* Динамическая задержка для каждой буквы */
+.letters-loading:nth-child(1) { animation-delay: 0s; }
+.letters-loading:nth-child(2) { animation-delay: 0.1s; }
+.letters-loading:nth-child(3) { animation-delay: 0.2s; }
+.letters-loading:nth-child(4) { animation-delay: 0.3s; }
+.letters-loading:nth-child(5) { animation-delay: 0.4s; }
+.letters-loading:nth-child(6) { animation-delay: 0.5s; }
+.letters-loading:nth-child(7) { animation-delay: 0.6s; }
+.letters-loading:nth-child(8) { animation-delay: 0.7s; }
+.letters-loading:nth-child(9) { animation-delay: 0.8s; }
+.letters-loading:nth-child(10) { animation-delay: 0.9s; }
+.letters-loading:nth-child(11) { animation-delay: 1s; }
+.letters-loading:nth-child(12) { animation-delay: 1.1s; }
+.letters-loading:nth-child(13) { animation-delay: 1.2s; }
+.letters-loading:nth-child(14) { animation-delay: 1.3s; }
 
+/* Анимация появления букв */
+@keyframes fadeIn {
+    0% { opacity: 0; transform: scale(0.8); }
+    50% { opacity: 1; transform: scale(1); }
+    100% { opacity: 0; transform: scale(1.2); }
+}
 
+/* ============================
+   АДАПТАЦИЯ ДЛЯ МОБИЛЬНЫХ И ПЛАНШЕТОВ
+   ============================ */
+@media (max-width: 1024px) { /* Планшеты */
+    .txt-loading {
+        font-size: 24px; /* Чуть меньше шрифт */
+    }
+    .spinner {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+@media (max-width: 768px) { /* Смартфоны */
+    .txt-loading {
+        font-size: 20px; /* Ещё чуть меньше */
+        letter-spacing: 1px;
+    }
+    .spinner {
+        width: 35px;
+        height: 35px;
+    }
+}
+
+@media (max-width: 480px) { /* Маленькие смартфоны */
+    .txt-loading {
+        font-size: 18px;
+        text-align: center;
+    }
+    .spinner {
+        width: 30px;
+        height: 30px;
+    }
+}
+
+/* ============================
+   УРОКИ (LESSONS)
+   ============================ */
+
+   .lessons-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 колонки по умолчанию */
+    gap: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* Карточка урока */
 .lesson {
     background: url('public/images/texture.png') repeat, #fff8dc;
     padding: 15px;
@@ -303,10 +456,14 @@ h1,h2 {
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
     text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border: 1px solid #f2c09c;
+    border: 1px solid #184d0d57;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
 }
 
-
+/* Контейнер для текста внутри урока */
 .lesson-container {
     max-width: 800px;
     margin: 20px auto;
@@ -316,9 +473,9 @@ h1,h2 {
     border-radius: 5px;
 }
 
-
+/* Анимация при наведении */
 .lesson:hover {
-    transform: translateY(-10px);
+    transform: translateY(-5px);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
@@ -333,15 +490,21 @@ h1,h2 {
     transform: scale(1.05);
 }
 
+/* Заголовок урока */
 .lesson h3 {
     color: #8b4513;
     margin: 10px 0;
+    font-size: 20px;
 }
 
+/* Описание урока */
 .lesson p {
     font-size: 14px;
     color: #555;
+    line-height: 1.4;
 }
+
+/* Кнопки */
 .free-lesson-button {
     display: inline-block;
     padding: 10px 20px;
@@ -373,43 +536,103 @@ h1,h2 {
     background-color: #9cb2a5;
 }
 
+/* ============================
+   АДАПТАЦИЯ ДЛЯ МОБИЛЬНЫХ И ПЛАНШЕТОВ
+   ============================ */
 
-/* ЧАТ */
+@media (max-width: 1024px) { /* Планшеты */
+    .lessons-grid {
+        grid-template-columns: repeat(2, 1fr); /* Оставляем 2 урока в ряд */
+        gap: 15px;
+    }
 
-/* Основной контейнер */
-.chat-wrapper {
-    display: grid;
-    grid-template-columns: 1fr 1fr; /* Две колонки, 50% на 50% */
-    gap: 20px;
-    max-width: 1000px;
-    margin: 20px auto;
-    align-items: start; /* Выравнивание по верхнему краю */
+    .lesson {
+        padding: 12px;
+    }
+
+    .lesson h3 {
+        font-size: 18px;
+    }
+
+    .lesson p {
+        font-size: 13px;
+    }
+
+    .buy-button {
+        font-size: 14px;
+        padding: 8px;
+    }
 }
 
-/* Левый блок (информационный) */
-.left-panel {
-    background: #fff8dc;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    padding: 15px;
-    font-family: "EB Garamond", "Bookman Old Style", serif !important;
-    font-style: italic;
-    font-weight: 200;
-    font-size: 16px;
+@media (max-width: 768px) { /* Смартфоны */
+    .lessons-grid {
+        grid-template-columns: repeat(1, 1fr); /* Один урок в ряд */
     }
+
+    .lesson {
+        padding: 10px;
+    }
+
+    .lesson h3 {
+        font-size: 16px;
+    }
+
+    .lesson p {
+        font-size: 12px;
+    }
+
+    .buy-button {
+        font-size: 14px;
+        padding: 8px;
+        width: 90%;
+    }
+}
+
+
+
+/* ============================
+   ЧАТ И ИНФОРМАЦИОННЫЙ БЛОК
+   ============================ */
+
+/* Общий контейнер (по ширине, как у контактов и уроков) */
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* Обёртка чата и информационного блока */
+.chat-wrapper {
+    display: flex;
+    gap: 10px;
+    height: 500px;
+}
+
+/* Информационный блок */
+.left-panel {
+    width: 25%;
+    background: #f3f3f3;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
 
 /* Чат */
 #chat {
+    width: 65%;
     background: #fff8dc;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     padding: 15px;
-    }
-
-.chat-container {
     display: flex;
     flex-direction: column;
-    height: 500px;
+}
+
+/* Одинаковая высота */
+.left-panel, #chat {
+    height: 100%;
 }
 
 /* Чат-бокс */
@@ -427,7 +650,6 @@ h1,h2 {
     gap: 10px;
 }
 
-
 #chat-input {
     flex: 1;
     padding: 14px;
@@ -438,6 +660,7 @@ h1,h2 {
     background: #f3f3f3;
 }
 
+/* Кнопки */
 #send-btn, #clear-btn, .moderator-login {
     padding: 14px 18px;
     border: none;
@@ -478,11 +701,58 @@ h1,h2 {
     transform: scale(0.97);
 }
 
+/* ============================
+   АДАПТАЦИЯ ДЛЯ ПЛАНШЕТОВ И МОБИЛЬНЫХ
+   ============================ */
 
-/* Контейнер с контактами */
-#contacts {
+@media (max-width: 1024px) { /* Планшеты */
+    .chat-wrapper {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .left-panel, #chat {
+        width: 100%; /* Растягиваем на всю ширину */
+    }
+}
+
+@media (max-width: 768px) { /* Смартфоны */
+    .chat-wrapper {
+        flex-direction: column;
+        height: auto;
+        gap: 15px;
+    }
+
+    .left-panel, #chat {
+        width: 100%; /* Чат и инфоблок на всю ширину */
+        padding: 10px;
+    }
+
+    #chat-controls {
+        flex-direction: column;
+    }
+
+    #chat-input {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    #send-btn, #clear-btn, .moderator-login {
+        width: 100%;
+        padding: 12px;
+        font-size: 14px;
+    }
+}
+
+
+
+
+/* ============================
+   КОНТЕЙНЕР С КОНТАКТАМИ
+   ============================ */
+   #contacts {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(4, 1fr); /* 4 колонки на компьютере */
     gap: 20px;
     padding: 40px;
     background: #f8f1e8;
@@ -527,7 +797,6 @@ h1,h2 {
     color: #a0522d;
 }
 
-
 /* Стили для иконок */
 .contact-item i {
     font-size: 24px;
@@ -535,18 +804,51 @@ h1,h2 {
     margin-bottom: 10px;
 }
 
+/* ============================
+   АДАПТАЦИЯ ДЛЯ ПЛАНШЕТОВ И МОБИЛЬНЫХ
+   ============================ */
 
-/* Футер */
+@media (max-width: 1024px) { /* Планшеты */
+    #contacts {
+        grid-template-columns: repeat(2, 1fr); /* 2 колонки */
+        padding: 30px;
+    }
+}
 
-footer {
+@media (max-width: 768px) { /* Смартфоны */
+    #contacts {
+        grid-template-columns: repeat(1, 1fr); /* 1 колонка */
+        padding: 20px;
+    }
+
+    .contact-item {
+        padding: 15px; /* Чуть меньше отступы */
+    }
+
+    .contact-item span {
+        font-size: 16px; /* Чуть меньше текст */
+    }
+
+    .contact-item a, 
+    .contact-item p {
+        font-size: 14px;
+    }
+}
+
+/* ============================
+   ФУТЕР (ПОДВАЛ САЙТА)
+   ============================ */
+
+   footer {
     background: url('public/images/footer-bg.png') center/cover no-repeat;
     color: #fff; /* Белый текст */
     text-shadow: 
         2px 2px 4px rgba(0, 0, 0, 1), 
         0px 0px 10px rgba(0, 0, 0, 0.8);
     text-align: center;
-    padding: 20px;
+    padding: 30px 20px; /* Чуть больше отступ */
     position: relative;
+    width: 100%;
 }
 
 footer::before {
@@ -564,31 +866,42 @@ footer * {
     z-index: 1;
 }
 
-/* текст стили */
+/* ============================
+   АДАПТАЦИЯ ДЛЯ ПЛАНШЕТОВ И МОБИЛЬНЫХ
+   ============================ */
 
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500&display=swap');
-
-body {
-    font-family: 'Poppins', sans-serif;
+@media (max-width: 1024px) { /* Планшеты */
+    footer {
+        padding: 25px 15px;
+        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+    }
 }
 
-h1, h2, h3 {
-    font-family: 'Dancing Script', cursive;
-}
-
-p {
-    font-family: 'Bookman Old Style','Playfair Display', serif;
-}
-
-.about-text {
-    font-family: "Bookman Old Style", serif;
-    font-style: italic;
-    font-weight: 300;
-    font-size: 18px;
-    line-height: 1.6;
-    color: #6d4c41; /* приятный тёплый оттенок */
+@media (max-width: 768px) { /* Смартфоны */
+    footer {
+        padding: 20px 10px;
+        font-size: 14px; /* Чуть уменьшаем шрифт */
+    }
 }
 
 
+/* ============================
+   YOUTUBE Video YOUTUBE Video 
+   ============================ */
 
-/* Медиа-запросы для адаптации под мобильные устройства *//* Медиа-запросы для адаптации под мобильные устройства */
+.video-container {
+    position: relative;
+    width: 95%; /* 95% ширины экрана */
+    max-width: 900px; /* Ограничение ширины на больших экранах */
+    margin: 0 auto; /* Центрирование */
+    aspect-ratio: 16 / 9; /* Поддержка правильного соотношения сторон */
+}
+
+.video-container iframe {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* YOUTUBE Video END *//* YOUTUBE Video END */
