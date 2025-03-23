@@ -791,16 +791,22 @@ h1, h2 {
         font-size: 14px;
     }
 
+    /* Увеличение высоты чата */
     #chat {
-        min-height: 500px; /* Увеличиваем минимальную высоту */
+        min-height: 500px !important; /* Увеличиваем минимальную высоту */
     }
 
     #chat-box {
-        height: 100%;
-        min-height: 400px; /* Делаем чат-бокс выше */
+        height: 100% !important;
+        min-height: 400px !important; /* Делаем чат-бокс выше */
     }
 
+    iframe {
+        height: 100% !important;
+        min-height: 400px !important; /* Увеличиваем высоту iframe */
+    }
 }
+
 
 
 
