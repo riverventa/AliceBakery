@@ -773,7 +773,7 @@ h1, h2 {
     }
 
     .left-panel, #chat {
-        width: 100%;
+        width: 100%; /* Чат и инфоблок на всю ширину */
         padding: 10px;
     }
 
@@ -794,19 +794,21 @@ h1, h2 {
 
     /* Увеличение высоты чата */
     #chat {
-        min-height: 600px !important;
+        min-height: 500px !important; /* Увеличиваем минимальную высоту */
     }
 
     #chat-box {
         height: 100% !important;
-        min-height: 500px !important;
+        min-height: 500px !important; /* Делаем чат-бокс выше */
     }
 
     iframe {
+        width: 100% !important;
         height: 100% !important;
-        min-height: 500px !important;
+        min-height: 500px !important; /* Увеличиваем высоту iframe */
     }
 }
+
 
 /* ============================
    ЧАТ ИНТЕГРАЦИЯ TAWK.TO
@@ -821,7 +823,14 @@ h1, h2 {
 #chat-box {
     position: relative;
     width: 100%;
-    height: 600px; /* Увеличено */
+    height: 500px; /* Можно менять */
+}
+
+/* Для мобильных увеличиваем высоту */
+@media (max-width: 768px) {
+    #chat-box {
+        height: 700px !important; /* Можно менять */
+    }
 }
 
 
