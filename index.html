@@ -199,7 +199,7 @@
         
     </main>
 
-  <!-- Чат и информационный блок -->
+<!-- Чат и информационный блок -->
 <div class="container">
     <div class="chat-wrapper">
        <!-- Левый блок -->
@@ -214,59 +214,65 @@
         <section id="chat">
             <h2>Чат</h2>
             <div class="chat-container">
-                <div id="chat-box"></div>
-                <div id="chat-controls">
-                    <input type="text" id="chat-input" placeholder="Введите сообщение...">
-                    <button id="send-btn">Отправить</button>
-                    <button id="clear-btn">Очистить</button>
-                    <button id="moderator-login" class="moderator-login">Войти как модератор</button>
+                <div id="chat-box">
+                    <!-- Здесь появится Tawk.to -->
                 </div>
             </div>
         </section>
     </div> <!-- Закрытие chat-wrapper -->
 </div> <!-- Закрытие container -->
 
+<!-- Подключение Tawk.to -->
+<script type="text/javascript">
+    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+    (function(){
+        var s1=document.createElement("script"), s0=document.getElementsByTagName("script")[0];
+        s1.async=true;
+        s1.src='https://embed.tawk.to/67e0265215935b190a859f8d/1in1pbd53';
+        s1.charset='UTF-8';
+        s1.setAttribute('crossorigin','*');
+        s0.parentNode.insertBefore(s1,s0);
+    })();
+</script>
 
+<!-- Скрипт для редактирования информационного блока -->
+<script>
+    const ownerPassword = "1234"; // Задайте свой пароль
+    const infoText = document.getElementById("info-text");
+    const editButton = document.getElementById("edit-info-btn");
+    const saveButton = document.getElementById("save-info-btn");
 
-        <script>
-            const ownerPassword = "1234"; // Задайте свой пароль
-            const infoText = document.getElementById("info-text");
-            const editButton = document.getElementById("edit-info-btn");
-            const saveButton = document.getElementById("save-info-btn");
+    // Загрузка сохранённого текста
+    document.addEventListener("DOMContentLoaded", function () {
+        const savedText = localStorage.getItem("infoText");
+        if (savedText) {
+            infoText.innerText = savedText;
+        }
+    });
 
-            // Загрузка сохранённого текста
-            document.addEventListener("DOMContentLoaded", function () {
-                const savedText = localStorage.getItem("infoText");
-                if (savedText) {
-                    infoText.innerText = savedText;
-                }
-            });
+    // Кнопка "Редактировать"
+    editButton.addEventListener("click", function () {
+        const userPassword = prompt("Введите пароль для редактирования:");
+        if (userPassword === ownerPassword) {
+            infoText.contentEditable = "true";
+            infoText.style.border = "1px solid red";
+            editButton.style.display = "none";
+            saveButton.style.display = "inline-block";
+        } else {
+            alert("Неверный пароль!");
+        }
+    });
 
-            // Кнопка "Редактировать"
-            editButton.addEventListener("click", function () {
-                const userPassword = prompt("Введите пароль для редактирования:");
-                if (userPassword === ownerPassword) {
-                    infoText.contentEditable = "true";
-                    infoText.style.border = "1px solid red";
-                    editButton.style.display = "none";
-                    saveButton.style.display = "inline-block";
-                } else {
-                    alert("Неверный пароль!");
-                }
-            });
-
-            // Кнопка "Сохранить"
-            saveButton.addEventListener("click", function () {
-                infoText.contentEditable = "false";
-                infoText.style.border = "none";
-                localStorage.setItem("infoText", infoText.innerText);
-                editButton.style.display = "inline-block";
-                saveButton.style.display = "none";
-                alert("Текст обновлён!");
-            });
-        </script>
-
-        <script src="chat.js"></script>
+    // Кнопка "Сохранить"
+    saveButton.addEventListener("click", function () {
+        infoText.contentEditable = "false";
+        infoText.style.border = "none";
+        localStorage.setItem("infoText", infoText.innerText);
+        editButton.style.display = "inline-block";
+        saveButton.style.display = "none";
+        alert("Текст обновлён!");
+    });
+</script>
 
 
     
@@ -316,8 +322,6 @@
     </script>
 
     
- 
-    <script src="chat.js"></script>
 
 
 

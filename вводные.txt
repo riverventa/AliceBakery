@@ -1,20 +1,15 @@
 AliceBaking/  
 │── .github/  
 │── images/  
-│── node_modules/  
 │── public/  
 │── index.html  
-│── chat.js  
 │── lesson1.html – lesson10.html  
 │── liqpay.js  
-│── package.json  
-│── package-lock.json  
-│── README.md  
 │── script.js  
-│── server.js  
 │── style.css  
 │── CNAME  
-│── вводные.txt  
+│── вводные.txt
+
 
 
 
