@@ -1,33 +1,28 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const socket = new WebSocket("ws://localhost:3001");
+    // Определяем IP-адрес сервера
+    const serverIP = window.location.hostname === "localhost" ? "localhost" : window.location.hostname;
+    const socket = new WebSocket(`ws://${serverIP}:3001`);
+
     const chatBox = document.getElementById("chat-box");
     const chatInput = document.getElementById("chat-input");
     const sendButton = document.getElementById("send-button");
     const clearButton = document.getElementById("clear-btn");
     const loginButton = document.getElementById("moderator-login");
 
-    let isModerator = false; // По умолчанию пользователь не модератор
+    let isModerator = false;
 
     // Запрашиваем имя пользователя
-    let userName = localStorage.getItem("userName");
-    if (!userName) {
-        userName = prompt("Введите ваше имя:");
-        if (!userName) {
-            userName = "Аноним"; // Если пользователь не ввел имя
-        }
-        localStorage.setItem("userName", userName);
-    }
+    let userName = localStorage.getItem("userName") || prompt("Введите ваше имя:") || "Аноним";
+    localStorage.setItem("userName", userName);
 
     // Скрываем кнопку очистки для обычных пользователей
-    if (clearButton) {
-        clearButton.style.display = "none";
-    }
+    if (clearButton) clearButton.style.display = "none";
 
     // Авторизация модератора
     if (loginButton) {
         loginButton.addEventListener("click", () => {
             const password = prompt("Введите пароль модератора:");
-            if (password === "1234") {  // Замените на свой пароль
+            if (password === "1234") { // Замените на свой пароль
                 isModerator = true;
                 clearButton.style.display = "inline-block";
                 alert("Вы вошли как модератор.");
@@ -39,28 +34,26 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Отправка сообщений
     if (sendButton && chatInput) {
-        sendButton.addEventListener("click", () => {
-            const message = chatInput.value.trim();
-            if (message !== "") {
-                const data = JSON.stringify({ name: userName, text: message });
-                socket.send(data);
-                chatInput.value = "";
-            }
-        });
-
-        // Отправка по нажатию Enter
+        sendButton.addEventListener("click", () => sendMessage());
         chatInput.addEventListener("keypress", (e) => {
-            if (e.key === "Enter") sendButton.click();
+            if (e.key === "Enter") sendMessage();
         });
+    }
+
+    function sendMessage() {
+        const message = chatInput.value.trim();
+        if (message !== "") {
+            socket.send(JSON.stringify({ name: userName, text: message }));
+            chatInput.value = "";
+        }
     }
 
     // Очистка чата (только для модератора)
     if (clearButton) {
         clearButton.addEventListener("click", () => {
             if (isModerator) {
-                chatBox.innerHTML = ""; // Очищаем чат
-                const systemMessage = JSON.stringify({ name: "Система", text: "Чат был очищен модератором." });
-                socket.send(systemMessage);
+                chatBox.innerHTML = "";
+                socket.send(JSON.stringify({ name: "Система", text: "Чат был очищен модератором." }));
             } else {
                 alert("У вас нет прав для очистки чата!");
             }
@@ -84,9 +77,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Обработка закрытия соединения
     socket.onclose = () => {
-        const msg = document.createElement("p");
-        msg.style.color = "red";
-        msg.textContent = "Соединение с сервером потеряно.";
-        chatBox.appendChild(msg);
+        displaySystemMessage("Соединение с сервером потеряно.", "red");
     };
+
+    // Обработка ошибок соединения
+    socket.onerror = () => {
+        displaySystemMessage("Ошибка соединения с сервером.", "red");
+    };
+
+    function displaySystemMessage(text, color = "black") {
+        const msg = document.createElement("p");
+        msg.style.color = color;
+        msg.textContent = text;
+        chatBox.appendChild(msg);
+    }
 });
