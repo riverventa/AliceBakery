@@ -799,39 +799,15 @@ h1, h2 {
 
     #chat-box {
         height: 100% !important;
-        min-height: 500px !important; /* Делаем чат-бокс выше */
+        min-height: 400px !important; /* Делаем чат-бокс выше */
     }
 
     iframe {
-        width: 100% !important;
         height: 100% !important;
-        min-height: 500px !important; /* Увеличиваем высоту iframe */
+        min-height: 400px !important; /* Увеличиваем высоту iframe */
     }
 }
 
-
-/* ============================
-   ЧАТ ИНТЕГРАЦИЯ TAWK.TO
-   ============================ */
-
-/* Прячем стандартную кнопку Tawk.to */
-#tawkto-button {
-    display: none !important;
-}
-
-/* Контейнер для чата */
-#chat-box {
-    position: relative;
-    width: 100%;
-    height: 500px; /* Можно менять */
-}
-
-/* Для мобильных увеличиваем высоту */
-@media (max-width: 768px) {
-    #chat-box {
-        height: 700px !important; /* Можно менять */
-    }
-}
 
 
 
