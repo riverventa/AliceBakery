@@ -790,6 +790,16 @@ h1, h2 {
         padding: 12px;
         font-size: 14px;
     }
+
+    #chat {
+        min-height: 500px; /* Увеличиваем минимальную высоту */
+    }
+
+    #chat-box {
+        height: 100%;
+        min-height: 400px; /* Делаем чат-бокс выше */
+    }
+
 }
 
 
