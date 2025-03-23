@@ -828,7 +828,6 @@ h1, h2 {
     color: #5d4037;
     width: 100%;
     box-sizing: border-box;
-    grid-template-columns: repeat(4, minmax(250px, 1fr)); /* Убедимся, что минимум 250px ширины для каждой карточки */
 }
 
 /* Стиль карточек */
@@ -840,6 +839,7 @@ h1, h2 {
     text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     transform: scaleY(0.8); /* Уменьшает высоту на 20% */
+    min-width: 250px; /* Принудительно задаем минимальную ширину */
 }
 
 .contact-item:hover {
