@@ -200,90 +200,83 @@
     </main>
 
 
-        <!-- Чат и информационный блок -->
-        
-        <div class="container">
-            <div class="chat-wrapper">
-                <!-- Левый блок -->
-                <div class="left-panel">
-                    <h2>Информационный блок</h2>
-                    <p id="info-text"></p>
-                    <button id="edit-info-btn">Редактировать</button>
-                    <button id="save-info-btn" style="display: none;">Сохранить</button>
-                </div>
+       <!-- Чат и информационный блок -->
+<div class="container">
+    <div class="chat-wrapper">
+        <!-- Левый блок -->
+        <div class="left-panel">
+            <h2>Информационный блок</h2>
+            <p id="info-text"></p>
+            <button id="edit-info-btn">Редактировать</button>
+            <button id="save-info-btn" style="display: none;">Сохранить</button>
+        </div>
 
-                <!-- Чат -->
-                <section id="chat">
-                    <h2>Чат</h2>
-                    <div class="chat-container" id="chat-box"></div>
-                </section>
-            </div> <!-- Закрытие chat-wrapper -->
-        </div> <!-- Закрытие container -->
+        <!-- Чат -->
+        <section id="chat">
+            <h2>Чат</h2>
+            <div class="chat-container" id="chat-box"></div>
+        </section>
+    </div> <!-- Закрытие chat-wrapper -->
+</div> <!-- Закрытие container -->
 
-        <!-- Подключение Tawk.to -->
-        
-            <script type="text/javascript">
-                var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
-                (function() {
-                    var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
-                    s1.async = true;
-                    s1.src = 'https://embed.tawk.to/67e0265215935b190a859f8d/1in1pbd53';
-                    s1.charset = 'UTF-8';
-                    s1.setAttribute('crossorigin', '*');
-                    s0.parentNode.insertBefore(s1, s0);
-                })();
-            </script>
+<!-- Подключение Tawk.to -->
+<script type="text/javascript">
+    var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+    (function() {
+        var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
+        s1.async = true;
+        s1.src = 'https://embed.tawk.to/67e0265215935b190a859f8d/1in1pbd53';
+        s1.charset = 'UTF-8';
+        s1.setAttribute('crossorigin', '*');
+        s0.parentNode.insertBefore(s1, s0);
+    })();
+
+    // Ждём загрузки Tawk.to
+    Tawk_API.onLoad = function() {
+        var chatBox = document.getElementById('chat-box');
+        if (chatBox) {
+            chatBox.innerHTML = '<div style="height: 100%;"><iframe src="https://tawk.to/chat/67e0265215935b190a859f8d/1in1pbd53" style="width:100%; height:100%; border:none;"></iframe></div>';
+        }
+    };
+</script>
+
+<!-- Восстановление работы кнопки "Редактировать" -->
+<script>
+    const ownerPassword = "1234";
+    const infoText = document.getElementById("info-text");
+    const editButton = document.getElementById("edit-info-btn");
+    const saveButton = document.getElementById("save-info-btn");
+
+    document.addEventListener("DOMContentLoaded", function () {
+        const savedText = localStorage.getItem("infoText");
+        if (savedText) {
+            infoText.innerText = savedText;
+        }
+    });
+
+    editButton.addEventListener("click", function () {
+        const userPassword = prompt("Введите пароль для редактирования:");
+        if (userPassword === ownerPassword) {
+            infoText.contentEditable = "true";
+            infoText.style.border = "1px solid red";
+            editButton.style.display = "none";
+            saveButton.style.display = "inline-block";
+        } else {
+            alert("Неверный пароль!");
+        }
+    });
+
+    saveButton.addEventListener("click", function () {
+        infoText.contentEditable = "false";
+        infoText.style.border = "none";
+        localStorage.setItem("infoText", infoText.innerText);
+        editButton.style.display = "inline-block";
+        saveButton.style.display = "none";
+        alert("Текст обновлён!");
+    });
+</script>
 
 
-
-            
-        </script>
-
-        <!-- Восстановление работы кнопки "Редактировать" -->
-        <script>
-            const ownerPassword = "1234"; // Пароль владельца
-            const infoText = document.getElementById("info-text");
-            const editButton = document.getElementById("edit-info-btn");
-            const saveButton = document.getElementById("save-info-btn");
-
-            // Загружаем сохранённый текст
-            document.addEventListener("DOMContentLoaded", function () {
-                const savedText = localStorage.getItem("infoText");
-                if (savedText) {
-                    infoText.innerText = savedText;
-                }
-            });
-
-            // Кнопка "Редактировать"
-            editButton.addEventListener("click", function () {
-                const userPassword = prompt("Введите пароль для редактирования:");
-                if (userPassword === ownerPassword) {
-                    infoText.contentEditable = "true";
-                    infoText.style.border = "1px solid red";
-                    editButton.style.display = "none";
-                    saveButton.style.display = "inline-block";
-                } else {
-                    alert("Неверный пароль!");
-                }
-            });
-
-            // Кнопка "Сохранить"
-            saveButton.addEventListener("click", function () {
-                infoText.contentEditable = "false";
-                infoText.style.border = "none";
-                localStorage.setItem("infoText", infoText.innerText);
-                editButton.style.display = "inline-block";
-                saveButton.style.display = "none";
-                alert("Текст обновлён!");
-            });
-        </script>
-
-        <!-- Стили для скрытия стандартной кнопки чата Tawk.to -->
-        <style>
-            #tawkto-button {
-                display: none !important;
-            }
-        </style>
 
 
 

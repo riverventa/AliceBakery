@@ -765,49 +765,54 @@ h1, h2 {
     }
 }
 
-@media (max-width: 768px) { /* Смартфоны */
-    .chat-wrapper {
-        flex-direction: column;
-        height: auto;
-        gap: 15px;
+<!-- Стили для адаптивности -->
+<style>
+    #tawkto-button {
+        display: none !important;
     }
 
-    .left-panel, #chat {
-        width: 100%; /* Чат и инфоблок на всю ширину */
-        padding: 10px;
-    }
+    @media (max-width: 768px) {
+        .chat-wrapper {
+            flex-direction: column;
+            height: auto;
+            gap: 15px;
+        }
 
-    #chat-controls {
-        flex-direction: column;
-    }
+        .left-panel, #chat {
+            width: 100%;
+            padding: 10px;
+        }
 
-    #chat-input {
-        width: 100%;
-        margin-bottom: 10px;
-    }
+        #chat-controls {
+            flex-direction: column;
+        }
 
-    #send-btn, #clear-btn, .moderator-login {
-        width: 100%;
-        padding: 12px;
-        font-size: 14px;
-    }
+        #chat-input {
+            width: 100%;
+            margin-bottom: 10px;
+        }
 
-    /* Увеличение высоты чата */
-    #chat {
-        min-height: 500px !important; /* Увеличиваем минимальную высоту */
-    }
+        #send-btn, #clear-btn, .moderator-login {
+            width: 100%;
+            padding: 12px;
+            font-size: 14px;
+        }
 
-    #chat-box {
-        height: 100% !important;
-        min-height: 400px !important; /* Делаем чат-бокс выше */
-    }
+        #chat {
+            min-height: 500px !important;
+        }
 
-    iframe {
-        height: 100% !important;
-        min-height: 400px !important; /* Увеличиваем высоту iframe */
-    }
-}
+        #chat-box {
+            height: 100% !important;
+            min-height: 400px !important;
+        }
 
+        iframe {
+            height: 100% !important;
+            min-height: 400px !important;
+        }
+    }
+</style>
 
 
 
