@@ -16,6 +16,7 @@
     11. КОНТЕЙНЕР С КОНТАКТАМИ
     12. ФУТЕР (ПОДВАЛ САЙТА)
     13. YOUTUBE VIDEO
+    14. ЧАТ ИНТЕГРАЦИЯ TAWK.TO
 */
 
         /*
@@ -772,7 +773,7 @@ h1, h2 {
     }
 
     .left-panel, #chat {
-        width: 100%; /* Чат и инфоблок на всю ширину */
+        width: 100%;
         padding: 10px;
     }
 
@@ -793,18 +794,34 @@ h1, h2 {
 
     /* Увеличение высоты чата */
     #chat {
-        min-height: 500px !important; /* Увеличиваем минимальную высоту */
+        min-height: 600px !important;
     }
 
     #chat-box {
         height: 100% !important;
-        min-height: 400px !important; /* Делаем чат-бокс выше */
+        min-height: 500px !important;
     }
 
     iframe {
         height: 100% !important;
-        min-height: 400px !important; /* Увеличиваем высоту iframe */
+        min-height: 500px !important;
     }
+}
+
+/* ============================
+   ЧАТ ИНТЕГРАЦИЯ TAWK.TO
+   ============================ */
+
+/* Прячем стандартную кнопку Tawk.to */
+#tawkto-button {
+    display: none !important;
+}
+
+/* Контейнер для чата */
+#chat-box {
+    position: relative;
+    width: 100%;
+    height: 600px; /* Увеличено */
 }
 
 
