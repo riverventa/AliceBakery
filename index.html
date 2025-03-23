@@ -233,8 +233,14 @@
             })();
 
             
-            
-            
+                Tawk_API.onLoad = function() {
+                var chatBox = document.getElementById('chat-box');
+                if (chatBox) {
+                    chatBox.innerHTML = '<div style="height: 100%;"><iframe src="https://tawk.to/chat/67e0265215935b190a859f8d/1in1pbd53" style="width:100%; height:100%; border:none;"></iframe></div>';
+                }
+            };
+
+                    
             
             
         </script>
