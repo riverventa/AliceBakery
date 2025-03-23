@@ -821,14 +821,13 @@ h1, h2 {
    КОНТЕЙНЕР С КОНТАКТАМИ
    ============================ */
    #contacts {
-    display: flex;
-    flex-wrap: wrap; /* Позволяет элементам переноситься на новую строку */
-    gap: 20px; /* Расстояние между элементами */
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 колонки на компьютере */
+    gap: 20px;
     padding: 40px;
     color: #5d4037;
     width: 100%;
     box-sizing: border-box;
-    justify-content: space-between; /* Выравнивание по горизонтали */
 }
 
 /* Стиль карточек */
@@ -840,11 +839,8 @@ h1, h2 {
     text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     transform: scaleY(0.8); /* Уменьшает высоту на 20% */
-    flex: 1 1 calc(25% - 20px); /* 4 колонки на десктопах (с учётом отступов) */
-    max-width: calc(25% - 20px); /* Ограничение ширины для колонок */
 }
 
-/* При наведении на карточку */
 .contact-item:hover {
     transform: translateY(-5px);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
@@ -883,26 +879,21 @@ h1, h2 {
    ============================ */
 
 /* Планшеты */
-@media (max-width: 1024px) {
+@media (max-width: 1024px) { 
     #contacts {
+        grid-template-columns: repeat(2, 1fr); /* 2 колонки на планшетах */
         padding: 30px;
-    }
-
-    .contact-item {
-        flex: 1 1 calc(50% - 20px); /* 2 колонки на планшетах */
-        max-width: calc(50% - 20px);
     }
 }
 
 /* Смартфоны */
-@media (max-width: 768px) {
+@media (max-width: 768px) { 
     #contacts {
+        grid-template-columns: repeat(1, 1fr); /* 1 колонка на мобильных */
         padding: 20px;
     }
 
     .contact-item {
-        flex: 1 1 100%; /* 1 колонка на мобильных */
-        max-width: 100%;
         padding: 15px; /* Меньше отступы */
     }
 
@@ -915,6 +906,7 @@ h1, h2 {
         font-size: 14px;
     }
 }
+
 
 
 /* ============================
