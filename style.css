@@ -828,6 +828,7 @@ h1, h2 {
     color: #5d4037;
     width: 100%;
     box-sizing: border-box;
+    grid-template-columns: repeat(4, minmax(250px, 1fr)); /* Убедимся, что минимум 250px ширины для каждой карточки */
 }
 
 /* Стиль карточек */
@@ -906,6 +907,7 @@ h1, h2 {
         font-size: 14px;
     }
 }
+
 
 
 
