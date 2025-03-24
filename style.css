@@ -950,31 +950,30 @@ footer * {
     }
 }
 
-    footer {
-        margin-top: auto;
-        position: relative; /* Если он случайно absolute */
-}
-
+    
 
 
 /* ============================
    YOUTUBE Video YOUTUBE Video 
    ============================ */
 
-.video-container {
+   .video-container {
     position: relative;
     width: 95%; /* 95% ширины экрана */
-    max-width: 900px; /* Ограничение ширины на больших экранах */
-    margin: 0 auto; /* Центрирование */
-    aspect-ratio: 16 / 9; /* Поддержка правильного соотношения сторон */
+    max-width: 900px;
+    margin: 0 auto;
+    padding-top: 56.25% !important; /* (9 / 16) * 100 для соблюдения пропорций */
 }
 
 .video-container iframe {
     position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
     border: none;
 }
+
 
 /* YOUTUBE Video END *//* YOUTUBE Video END */
 
