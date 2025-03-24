@@ -821,9 +821,8 @@ h1, h2 {
    КОНТЕЙНЕР С КОНТАКТАМИ
    ============================ */
    .container {
-    margin-top: 10px; /* Отступ сверху для всех контейнеров */
+    margin-top: 10px; /* Отступ сверху */
 }
-
 
 #contacts {
     display: grid;
@@ -833,9 +832,7 @@ h1, h2 {
     color: #5d4037;
     width: 100%;
     box-sizing: border-box;
-    margin-top: 10px; /* Отступ сверху */
 }
-
 
 /* Стиль карточек */
 .contact-item {
@@ -845,7 +842,6 @@ h1, h2 {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    transform: scaleY(0.8); /* Уменьшает высоту на 20% */
 }
 
 .contact-item:hover {
@@ -882,38 +878,22 @@ h1, h2 {
 }
 
 /* ============================
-   АДАПТАЦИЯ ДЛЯ ПЛАНШЕТОВ И МОБИЛЬНЫХ
+   адаптация для планшетов и мобильных
    ============================ */
 
 /* Планшеты */
 @media (max-width: 1024px) { 
     #contacts {
-        grid-template-columns: repeat(2, 1fr); /* 2 колонки на планшетах */
-        padding: 30px;
+        grid-template-columns: repeat(2, minmax(200px, 1fr)); /* 2 колонки */
     }
 }
 
 /* Смартфоны */
 @media (max-width: 768px) { 
     #contacts {
-        grid-template-columns: repeat(1, 1fr); /* 1 колонка на мобильных */
-        padding: 20px;
-    }
-
-    .contact-item {
-        padding: 15px; /* Меньше отступы */
-    }
-
-    .contact-item span {
-        font-size: 16px; /* Меньше текст */
-    }
-
-    .contact-item a,
-    .contact-item p {
-        font-size: 14px;
+        grid-template-columns: repeat(1, minmax(200px, 1fr)); /* 1 колонка */
     }
 }
-
 
 
 
