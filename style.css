@@ -17,6 +17,7 @@
     12. ФУТЕР (ПОДВАЛ САЙТА)
     13. YOUTUBE VIDEO
     14. ЧАТ ИНТЕГРАЦИЯ TAWK.TO
+    15. АДАПТАЦИЯ ДЛЯ СТРАНИЦ УРОКОВ в мобильных
 */
 
         /*
@@ -253,7 +254,7 @@ h1, h2 {
     color: rgb(73, 37, 37);
 }
 
-/* Баннер для адаптации под мобильные устройства */
+
 /* Баннер для адаптации под мобильные устройства */
 @media (max-width: 768px) {
     .banner {
@@ -277,11 +278,11 @@ h1, h2 {
 
     .banner-content h1 {
         font-size: 32px;
-        padding: 2px 4px;
+        padding: 5px 10px;
         background: none;
-        text-shadow: 6px 6px 15px rgba(255, 255, 255, 0.9), 
-                     0px 0px 40px rgba(255, 255, 255, 1);
-        border-radius: 15px;
+        color: #fff !important; /* Белый текст */
+        text-shadow: 6px 6px 15px rgba(0, 0, 0, 1); /* Более интенсивная тень */
+        border-radius: 10px;
         display: inline-block;
         margin: 0;
         transform: translateX(-220px); /* Сдвигаем влево */
@@ -897,6 +898,7 @@ h1, h2 {
 
 
 
+
 /* ============================
    ФУТЕР (ПОДВАЛ САЙТА)
    ============================ */
@@ -928,6 +930,8 @@ footer * {
     z-index: 1;
 }
 
+
+
 /* ============================
    АДАПТАЦИЯ ДЛЯ ПЛАНШЕТОВ И МОБИЛЬНЫХ
    ============================ */
@@ -945,6 +949,12 @@ footer * {
         font-size: 14px; /* Чуть уменьшаем шрифт */
     }
 }
+
+    footer {
+        margin-top: auto;
+        position: relative; /* Если он случайно absolute */
+}
+
 
 
 /* ============================
@@ -972,3 +982,4 @@ footer * {
 #tawkto-button {
     display: none !important;
 }
+
