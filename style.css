@@ -821,8 +821,8 @@ h1, h2 {
    КОНТЕЙНЕР С КОНТАКТАМИ
    ============================ */
    #contacts {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr); /* 4 колонки на компьютере */
+    display: grid !important;
+    grid-template-columns: repeat(4, 1fr) !important;
     gap: 20px;
     padding: 40px;
     color: #5d4037;
