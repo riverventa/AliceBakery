@@ -820,15 +820,22 @@ h1, h2 {
 /* ============================
    КОНТЕЙНЕР С КОНТАКТАМИ
    ============================ */
-   #contacts {
-    display: grid !important;
-    grid-template-columns: repeat(4, 1fr) !important;
+   .container {
+    margin-top: 10px; /* Отступ сверху для всех контейнеров */
+}
+
+
+#contacts {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(200px, 1fr)); /* 4 колонки, минимум 200px */
     gap: 20px;
     padding: 40px;
     color: #5d4037;
     width: 100%;
     box-sizing: border-box;
+    margin-top: 10px; /* Отступ сверху */
 }
+
 
 /* Стиль карточек */
 .contact-item {
@@ -839,7 +846,6 @@ h1, h2 {
     text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     transform: scaleY(0.8); /* Уменьшает высоту на 20% */
-    min-width: 250px; /* Принудительно задаем минимальную ширину */
 }
 
 .contact-item:hover {
