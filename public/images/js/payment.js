@@ -36,6 +36,9 @@ function openPaymentModule(lesson) {
     let signString = private_key + data + private_key;
     let signature = CryptoJS.SHA1(signString).toString(CryptoJS.enc.Base64); // Используем SHA1
 
+    console.log("Payment data:", paymentData);
+    console.log("Signature:", signature);
+
     // Открываем форму оплаты LiqPay
     let form = document.createElement("form");
     form.method = "POST";
