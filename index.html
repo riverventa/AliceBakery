@@ -23,7 +23,7 @@
 
        <!-- Preloader -->
         
-              <section>
+            <section>
                     <div id="preloader">
                         <div id="ctn-preloader" class="ctn-preloader">
                             <div class="animation-preloader">
@@ -51,7 +51,7 @@
                     </div>
                 </section>
 
-            <!-- Preloader -->
+            <!-- Preloader --> 
 
     
 
@@ -318,10 +318,22 @@
     
 
 
-             <script src="./public/js/payment.js"></script>
-             <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1-crypto-js.min.js"></script>
+        <!-- <script src="./public/js/payment.js"></script> -->
+
+        <!-- <script src="script.js"></script> -->
 
 
+       <!-- прелоадер -->
+        <script>
+            window.addEventListener('load', function() {
+                // Даем небольшой промежуток времени, чтобы прелоадер успел появиться
+                setTimeout(function() {
+                    document.getElementById('preloader').style.display = 'none';
+                }, 1700);  // Задержка в 1.7 секунду (1700 миллисекунд)
+            });
+        </script>
+        <!-- прелоадер -->
+        
 
 
 </body>
