@@ -1,16 +1,56 @@
-AliceBaking/  
-│── .github/  
-│── images/  
-│── public/  
-│── index.html  
-│── lesson1.html – lesson10.html  
-│── liqpay.js  
-│── script.js  
-│── style.css  
-│── CNAME  
-│── вводные.txt
+C:.
+│   CNAME
+│   index.html
+│   lesson1.html
+│   lesson10.html
+│   lesson2.html
+│   lesson3.html
+│   lesson4.html
+│   lesson5.html
+│   lesson6.html
+│   lesson7.html
+│   lesson8.html
+│   lesson9.html
+│   liqpay.js
+│   prepros.config
+│   script.js
+│   style.css
+│   вводные.txt
+│
+├───.github
+│   └───workflows
+│           static.yml
+│
+├───images
+│       background.jpg
+│
+└───public
+	└───js
+		└───payment.js
 
+    	└───images
+            background.jpg
+            banner-mobile.png
+            banner.png
+            banner1.png
+            bannerмцум.png
+            desser10.jpg
+            dessert1.jpg
+            dessert2.jpg
+            dessert3.jpg
+            dessert4.jpg
+            dessert5.jpg
+            dessert6.jpg
+            dessert7.jpg
+            dessert8.jpg
+            dessert9.jpg
+            footer-bg.png
+            lesson-banner.png
+            texture.png 
 
+├───public
+    └───js
+        └───payment.js
 
 
 

@@ -20,8 +20,10 @@
 
         <body class="home-page">
             <div class="container">
-                <!-- Preloader -->
-                <section>
+
+       <!-- Preloader -->
+        
+              <section>
                     <div id="preloader">
                         <div id="ctn-preloader" class="ctn-preloader">
                             <div class="animation-preloader">
@@ -48,7 +50,8 @@
                         </div>
                     </div>
                 </section>
-                <!-- Preloader -->
+
+            <!-- Preloader -->
 
     
 
@@ -126,76 +129,77 @@
         </div>
 
         
-                <!-- Уроки -->
+                            <!-- Уроки -->
 
-                <div class="container">
-                    <section id="lessons">
-                        <h2>Выберите урок</h2>
-                        <div class="lessons-grid">
-                            <div class="lesson">
-                                <img src="banner1.jpg" alt="Урок 1">
-                                <h3>Основы выпечки</h3>
-                                <p>Научитесь печь вкусные хлеба и булочки.</p>
-                                <a href="lesson1.html" class="free-lesson-button">Смотреть бесплатно</a>
-                            </div>
-                            <div class="lesson">
-                                <img src="banner2.jpg" alt="Урок 2">
-                                <h3>Торты и пирожные</h3>
-                                <p>Создавайте изысканные десерты.</p>
-                                <a href="lesson2.html" class="free-lesson-button">Смотреть бесплатно</a>
-                            </div>
-                            
-                            <div class="lesson">
-                                <img src="banner3.jpg" alt="Урок 3">
-                                <h3>Мой любимый торт</h3>
-                                <p>Идеальный рецепт для любого праздника.</p>
-                                <button class="buy-button" data-lesson="lesson3.html">Купить</button>
-                            </div>
-                            <div class="lesson">
-                                <img src="banner4.jpg" alt="Урок 4">
-                                <h3>Французская выпечка</h3>
-                                <p>Научитесь готовить круассаны и эклеры.</p>
-                                <button class="buy-button" data-lesson="lesson4.html">Купить</button>
-                            </div>
-                            <div class="lesson">
-                                <img src="banner5.jpg" alt="Урок 5">
-                                <h3>Пицца дома</h3>
-                                <p>Идеальное тесто и вкусные начинки.</p>
-                                <button class="buy-button" data-lesson="lesson5.html">Купить</button>
-                            </div>
-                            <div class="lesson">
-                                <img src="banner6.jpg" alt="Урок 6">
-                                <h3>Шоколадные десерты</h3>
-                                <p>Готовим лучшие шоколадные угощения.</p>
-                                <button class="buy-button" data-lesson="lesson6.html">Купить</button>
-                            </div>
-                            <div class="lesson">
-                                <img src="banner7.jpg" alt="Урок 7">
-                                <h3>Печенье и пряники</h3>
-                                <p>Рецепты ароматного домашнего печенья.</p>
-                                <button class="buy-button" data-lesson="lesson7.html">Купить</button>
-                            </div>
-                            <div class="lesson">
-                                <img src="banner8.jpg" alt="Урок 8">
-                                <h3>Диетическая выпечка</h3>
-                                <p>Полезные десерты без вреда для фигуры.</p>
-                                <button class="buy-button" data-lesson="lesson8.html">Купить</button>
-                            </div>
-                            <div class="lesson">
-                                <img src="banner9.jpg" alt="Урок 9">
-                                <h3>Домашний хлеб</h3>
-                                <p>Испеките идеальный хлеб у себя дома.</p>
-                                <button class="buy-button" data-lesson="lesson9.html">Купить</button>
-                            </div>
-                            <div class="lesson">
-                                <img src="banner10.jpg" alt="Урок 10">
-                                <h3>Веганские десерты</h3>
-                                <p>Готовим вкусные сладости без молока и яиц.</p>
-                                <button class="buy-button" data-lesson="lesson3.html">Купить</button>
-                            </div>
+            <div class="container">
+                <section id="lessons">
+                    <h2>Выберите урок</h2>
+                    <div class="lessons-grid">
+                        <div class="lesson">
+                            <img src="banner1.jpg" alt="Урок 1">
+                            <h3>Основы выпечки</h3>
+                            <p>Научитесь печь вкусные хлеба и булочки.</p>
+                            <a href="lesson1.html" class="free-lesson-button">Смотреть бесплатно</a>
                         </div>
-                    </section>
-                </div>
+                        <div class="lesson">
+                            <img src="banner2.jpg" alt="Урок 2">
+                            <h3>Торты и пирожные</h3>
+                            <p>Создавайте изысканные десерты.</p>
+                            <a href="lesson2.html" class="free-lesson-button">Смотреть бесплатно</a>
+                        </div>
+                        
+                        <div class="lesson">
+                            <img src="banner3.jpg" alt="Урок 3">
+                            <h3>Мой любимый торт</h3>
+                            <p>Идеальный рецепт для любого праздника.</p>
+                            <button class="buy-button" data-lesson="lesson3.html" onclick="initiatePayment(this)">Купить</button>
+                        </div>
+                        <div class="lesson">
+                            <img src="banner4.jpg" alt="Урок 4">
+                            <h3>Французская выпечка</h3>
+                            <p>Научитесь готовить круассаны и эклеры.</p>
+                            <button class="buy-button" data-lesson="lesson4.html" onclick="initiatePayment(this)">Купить</button>
+                        </div>
+                        <div class="lesson">
+                            <img src="banner5.jpg" alt="Урок 5">
+                            <h3>Пицца дома</h3>
+                            <p>Идеальное тесто и вкусные начинки.</p>
+                            <button class="buy-button" data-lesson="lesson5.html" onclick="initiatePayment(this)">Купить</button>
+                        </div>
+                        <div class="lesson">
+                            <img src="banner6.jpg" alt="Урок 6">
+                            <h3>Шоколадные десерты</h3>
+                            <p>Готовим лучшие шоколадные угощения.</p>
+                            <button class="buy-button" data-lesson="lesson6.html" onclick="initiatePayment(this)">Купить</button>
+                        </div>
+                        <div class="lesson">
+                            <img src="banner7.jpg" alt="Урок 7">
+                            <h3>Печенье и пряники</h3>
+                            <p>Рецепты ароматного домашнего печенья.</p>
+                            <button class="buy-button" data-lesson="lesson7.html" onclick="initiatePayment(this)">Купить</button>
+                        </div>
+                        <div class="lesson">
+                            <img src="banner8.jpg" alt="Урок 8">
+                            <h3>Диетическая выпечка</h3>
+                            <p>Полезные десерты без вреда для фигуры.</p>
+                            <button class="buy-button" data-lesson="lesson8.html" onclick="initiatePayment(this)">Купить</button>
+                        </div>
+                        <div class="lesson">
+                            <img src="banner9.jpg" alt="Урок 9">
+                            <h3>Домашний хлеб</h3>
+                            <p>Испеките идеальный хлеб у себя дома.</p>
+                            <button class="buy-button" data-lesson="lesson9.html" onclick="initiatePayment(this)">Купить</button>
+                        </div>
+                        <div class="lesson">
+                            <img src="banner10.jpg" alt="Урок 10">
+                            <h3>Веганские десерты</h3>
+                            <p>Готовим вкусные сладости без молока и яиц.</p>
+                            <button class="buy-button" data-lesson="lesson10.html" onclick="initiatePayment(this)">Купить</button>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
         
     </main>
 
@@ -311,12 +315,13 @@
         <p>&copy; 2025 Culinary Lessons. All Rights Reserved.</p>
     </footer>
     
-    <script>
-        function purchaseLesson(lessonPage) {
-            alert("Оплата прошла успешно!");
-            window.location.href = lessonPage;
-        }
-    </script>
+    
+
+
+             <script src="./public/js/payment.js"></script>
+             <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1-crypto-js.min.js"></script>
+
+
 
 
 </body>
