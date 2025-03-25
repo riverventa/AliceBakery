@@ -29,7 +29,7 @@ function openPaymentModule(lesson) {
         result_url: window.location.href // Возврат на текущую страницу после оплаты
     };
 
-    
+
     // Кодируем данные в base64
     console.log("Raw payment data:", JSON.stringify(paymentData));
     let data = btoa(JSON.stringify(paymentData));
@@ -37,7 +37,8 @@ function openPaymentModule(lesson) {
 
     // Генерация подписи с использованием SHA1
     let signString = private_key + data + private_key;
-    let signature = CryptoJS.SHA1(signString).toString(CryptoJS.enc.Base64); // Используем SHA1
+    let signature = btoa(CryptoJS.SHA1(signString).toString(CryptoJS.enc.Hex));
+
 
     console.log("Payment data:", paymentData);
     console.log("Signature:", signature);
