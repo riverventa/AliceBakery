@@ -12,10 +12,7 @@
     <link rel="stylesheet" href="style.css"> 
       
 
-
-    <script defer src="script.js"></script>
-
-    
+   
 </head>
 
         <body class="home-page">
@@ -129,72 +126,134 @@
         </div>
 
         
-                           <!-- Уроки -->
+                          <!-- Уроки -->
+
 
             <div class="container">
                 <section id="lessons">
                     <h2>Выберите урок</h2>
                     <div class="lessons-grid">
+
+                        <!-- Урок 1 (бесплатный) -->
+
                         <div class="lesson">
                             <img src="banner1.jpg" alt="Урок 1">
                             <h3>Основы выпечки</h3>
                             <p>Научитесь печь вкусные хлеба и булочки.</p>
                             <a href="lesson1.html" class="free-lesson-button">Смотреть бесплатно</a>
                         </div>
+
+                        <!-- Урок 2 (бесплатный) -->
+
                         <div class="lesson">
                             <img src="banner2.jpg" alt="Урок 2">
                             <h3>Торты и пирожные</h3>
                             <p>Создавайте изысканные десерты.</p>
                             <a href="lesson2.html" class="free-lesson-button">Смотреть бесплатно</a>
                         </div>
-                        
+
+                        <!-- Урок 3 -->
+
                         <div class="lesson">
                             <img src="banner3.jpg" alt="Урок 3">
                             <h3>Мой любимый торт</h3>
                             <p>Идеальный рецепт для любого праздника.</p>
-                            <button class="buy-button" data-lesson="lesson3.html" onclick="initiatePayment(this)">Купить</button>
+                            <form method="POST" action="https://www.liqpay.ua/api/3/checkout">
+                                <input type="hidden" name="data" value="BASE64_ЗАКОДИРОВАННЫЕ_ДАННЫЕ_УРОКА_3">
+                                <input type="hidden" name="signature" value="ПОДПИСЬ_УРОКА_3">
+                                <button type="submit" class="buy-button">Купить</button>
+                            </form>
                         </div>
+
+                        <!-- Урок 4 -->
+
                         <div class="lesson">
                             <img src="banner4.jpg" alt="Урок 4">
                             <h3>Французская выпечка</h3>
                             <p>Научитесь готовить круассаны и эклеры.</p>
-                            <button class="buy-button" data-lesson="lesson4.html" onclick="initiatePayment(this)">Купить</button>
+                            <form method="POST" action="https://www.liqpay.ua/api/3/checkout">
+                                <input type="hidden" name="data" value="BASE64_ЗАКОДИРОВАННЫЕ_ДАННЫЕ_УРОКА_4">
+                                <input type="hidden" name="signature" value="ПОДПИСЬ_УРОКА_4">
+                                <button type="submit" class="buy-button">Купить</button>
+                            </form>
                         </div>
+
+                        <!-- Урок 5 -->
+
                         <div class="lesson">
                             <img src="banner5.jpg" alt="Урок 5">
                             <h3>Пицца дома</h3>
                             <p>Идеальное тесто и вкусные начинки.</p>
-                            <button class="buy-button" data-lesson="lesson5.html" onclick="initiatePayment(this)">Купить</button>
+                            <form method="POST" action="https://www.liqpay.ua/api/3/checkout">
+                                <input type="hidden" name="data" value="BASE64_ЗАКОДИРОВАННЫЕ_ДАННЫЕ_УРОКА_5">
+                                <input type="hidden" name="signature" value="ПОДПИСЬ_УРОКА_5">
+                                <button type="submit" class="buy-button">Купить</button>
+                            </form>
                         </div>
+
+                        <!-- Урок 6 -->
+
                         <div class="lesson">
                             <img src="banner6.jpg" alt="Урок 6">
                             <h3>Шоколадные десерты</h3>
                             <p>Готовим лучшие шоколадные угощения.</p>
-                            <button class="buy-button" data-lesson="lesson6.html" onclick="initiatePayment(this)">Купить</button>
+                            <form method="POST" action="https://www.liqpay.ua/api/3/checkout">
+                                <input type="hidden" name="data" value="BASE64_ЗАКОДИРОВАННЫЕ_ДАННЫЕ_УРОКА_6">
+                                <input type="hidden" name="signature" value="ПОДПИСЬ_УРОКА_6">
+                                <button type="submit" class="buy-button">Купить</button>
+                            </form>
                         </div>
+
+                        <!-- Урок 7 -->
+
                         <div class="lesson">
                             <img src="banner7.jpg" alt="Урок 7">
                             <h3>Печенье и пряники</h3>
                             <p>Рецепты ароматного домашнего печенья.</p>
-                            <button class="buy-button" data-lesson="lesson7.html" onclick="initiatePayment(this)">Купить</button>
+                            <form method="POST" action="https://www.liqpay.ua/api/3/checkout">
+                                <input type="hidden" name="data" value="BASE64_ЗАКОДИРОВАННЫЕ_ДАННЫЕ_УРОКА_7">
+                                <input type="hidden" name="signature" value="ПОДПИСЬ_УРОКА_7">
+                                <button type="submit" class="buy-button">Купить</button>
+                            </form>
                         </div>
+
+                        <!-- Урок 8 -->
+
                         <div class="lesson">
                             <img src="banner8.jpg" alt="Урок 8">
                             <h3>Диетическая выпечка</h3>
                             <p>Полезные десерты без вреда для фигуры.</p>
-                            <button class="buy-button" data-lesson="lesson8.html" onclick="initiatePayment(this)">Купить</button>
+                            <form method="POST" action="https://www.liqpay.ua/api/3/checkout">
+                                <input type="hidden" name="data" value="BASE64_ЗАКОДИРОВАННЫЕ_ДАННЫЕ_УРОКА_8">
+                                <input type="hidden" name="signature" value="ПОДПИСЬ_УРОКА_8">
+                                <button type="submit" class="buy-button">Купить</button>
+                            </form>
                         </div>
+
+                        <!-- Урок 9 -->
+
                         <div class="lesson">
                             <img src="banner9.jpg" alt="Урок 9">
                             <h3>Домашний хлеб</h3>
                             <p>Испеките идеальный хлеб у себя дома.</p>
-                            <button class="buy-button" data-lesson="lesson9.html" onclick="initiatePayment(this)">Купить</button>
+                            <form method="POST" action="https://www.liqpay.ua/api/3/checkout">
+                                <input type="hidden" name="data" value="BASE64_ЗАКОДИРОВАННЫЕ_ДАННЫЕ_УРОКА_9">
+                                <input type="hidden" name="signature" value="ПОДПИСЬ_УРОКА_9">
+                                <button type="submit" class="buy-button">Купить</button>
+                            </form>
                         </div>
+
+                        <!-- Урок 10 -->
+                        
                         <div class="lesson">
                             <img src="banner10.jpg" alt="Урок 10">
                             <h3>Веганские десерты</h3>
                             <p>Готовим вкусные сладости без молока и яиц.</p>
-                            <button class="buy-button" data-lesson="lesson10.html" onclick="initiatePayment(this)">Купить</button>
+                            <form method="POST" action="https://www.liqpay.ua/api/3/checkout">
+                                <input type="hidden" name="data" value="BASE64_ЗАКОДИРОВАННЫЕ_ДАННЫЕ_УРОКА_10">
+                                <input type="hidden" name="signature" value="ПОДПИСЬ_УРОКА_10">
+                                <button type="submit" class="buy-button">Купить</button>
+                            </form>
                         </div>
                     </div>
                 </section>
@@ -317,11 +376,7 @@
     </footer>
     
     
-
-
-       <!-- <script src="script.js"></script> -->
-
-
+      
        <!-- прелоадер -->
         <script>
             window.addEventListener('load', function() {
@@ -333,12 +388,7 @@
         </script>
         <!-- прелоадер -->
         
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1-crypto-js.js"></script>
-
-        <script src="/payment.js"></script>
-
-
-
+       
 
 </body>
 </html>
