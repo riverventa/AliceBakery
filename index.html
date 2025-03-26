@@ -402,55 +402,56 @@
 
 
 
-                            <!-- GOOGLE TRANSLATE -->
-                <!-- Виджет Google Translate (скрытый) -->
-                <div id="google_translate_element" style="display: none;"></div>
+                        <!-- GOOGLE TRANSLATE -->
+            <!-- Виджет Google Translate (скрытый) -->
+            <div id="google_translate_element" style="display: none;"></div>
 
-                <!-- Ваш скрипт для переключения языков -->
-                <script type="text/javascript">
-                    // Инициализация Google Translate
-                    function googleTranslateElementInit() {
-                        new google.translate.TranslateElement({
-                            pageLanguage: 'ru', 
-                            includedLanguages: 'ru,uk'
-                        }, 'google_translate_element');
+            <!-- Скрипт для инициализации и переключения языков -->
+            <script type="text/javascript">
+                // Инициализация Google Translate
+                function googleTranslateElementInit() {
+                    new google.translate.TranslateElement({
+                        pageLanguage: 'ru', 
+                        includedLanguages: 'ru,uk'
+                    }, 'google_translate_element');
+                }
+
+                // Функция переключения языка
+                function toggleLanguage() {
+                    var select = document.querySelector(".goog-te-combo");
+                    if (select) {
+                        var currentLang = select.value;
+                        var newLang = currentLang === "uk" ? "ru" : "uk"; // Переключаем между укр и рус
+                        select.value = newLang;
+                        select.dispatchEvent(new Event("change"));
+
+                        // Меняем текст кнопки
+                        document.getElementById("translate-btn").innerText = (newLang === "uk") ? "Русский" : "Українська мова";
+                    } else {
+                        alert("Ошибка: Google Translate ещё не загрузился!");
                     }
+                }
+            </script>
 
-                    // Переключение языка
-                    function toggleLanguage() {
-                        var select = document.querySelector(".goog-te-combo");
-                        if (select) {
-                            var currentLang = select.value;
-                            var newLang = currentLang === "uk" ? "ru" : "uk"; // Переключаем между укр и рус
-                            select.value = newLang;
-                            select.dispatchEvent(new Event("change"));
+            <!-- Подключение Google Translate API только для десктопных устройств -->
+            <script type="text/javascript">
+                if (window.innerWidth > 768) {
+                    // Подключаем Google Translate только для устройств с экраном больше 768px
+                    var script = document.createElement('script');
+                    script.src = "//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit";
+                    document.body.appendChild(script);
+                }
+            </script>
 
-                            // Меняем текст кнопки
-                            document.getElementById("translate-btn").innerText = (newLang === "uk") ? "Русский" : "Українська мова";
-                        } else {
-                            alert("Ошибка: Google Translate ещё не загрузился!");
-                        }
-                    }
-                </script>
+            <!-- Убираем баннер Google Translate на мобильных устройствах -->
+            <script type="text/javascript">
+                if (window.innerWidth <= 768) {
+                    // Скрываем виджет для мобильных устройств
+                    document.getElementById('google_translate_element').style.display = 'none';
+                }
+            </script>
+            <!-- GOOGLE TRANSLATE END-->
 
-                <!-- Подключение Google Translate API только для десктопных устройств -->
-                <script type="text/javascript">
-                    if (window.innerWidth > 768) {
-                        // Подключаем Google Translate только для устройств с экраном больше 768px
-                        var script = document.createElement('script');
-                        script.src = "//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit";
-                        document.body.appendChild(script);
-                    }
-                </script>
-
-                <!-- Убираем баннер Google Translate на мобильных устройствах -->
-                <script type="text/javascript">
-                    if (window.innerWidth <= 768) {
-                        // Скрываем виджет для мобильных устройств
-                        document.getElementById('google_translate_element').style.display = 'none';
-                    }
-                </script>
-                <!-- GOOGLE TRANSLATE END-->
 
 
 
