@@ -12,17 +12,7 @@
     <link rel="stylesheet" href="style.css"> 
       
 
-           <!-- GOOGLE TRANSLATE BUTTON -->
-            <button id="translate-btn" onclick="toggleLanguage()" 
-            style="background: #c9fdd1; color: black; border: none; padding: 5px 10px; 
-            border-radius: 5px; cursor: pointer; font-size: 16px;">
-            Українська мова
-            </button>
-            <!-- GOOGLE TRANSLATE BUTTON END-->
-
-            <!-- Контейнер для Google Translate -->
-            <div id="google_translate_element"></div>
-
+                   
 
             
 </head>
@@ -397,39 +387,47 @@
                 <!-- Прелоадер end -->
 
 
-                
+
+
+                 <!-- GOOGLE TRANSLATE BUTTON -->
+            <button id="translate-btn" onclick="toggleLanguage()" 
+            style="background: #c9fdd1; color: black; border: none; padding: 5px 10px; 
+            border-radius: 5px; cursor: pointer; font-size: 16px;">
+            Українська мова
+            </button>
+                      <!-- GOOGLE TRANSLATE BUTTON END-->
+
+            <!-- Скрытый контейнер для Google Translate (НУЖЕН ДЛЯ РАБОТЫ!) -->
+            <div id="google_translate_element" style="display: none;"></div>
 
                 <!--  Скрипт (JS). Добавляем логику для инициализации Google Translate 
                   и переключения языка.-->
 
-                  <script type="text/javascript">
+                  <!-- Скрипт для перевода -->
+                <script type="text/javascript">
                     function googleTranslateElementInit() {
-                        new google.translate.TranslateElement({
-                            pageLanguage: 'ru', 
-                            includedLanguages: 'ru,uk',
-                            layout: google.translate.TranslateElement.InlineLayout.SIMPLE
-                        }, 'google_translate_element');
+                        new google.translate.TranslateElement({ pageLanguage: 'ru', includedLanguages: 'ru,uk' }, 'google_translate_element');
                     }
-                
+
                     function toggleLanguage() {
                         var select = document.querySelector(".goog-te-combo");
                         if (select) {
                             var currentLang = select.value;
-                            var newLang = currentLang === "uk" ? "ru" : "uk"; // Переключение между языками
+                            var newLang = currentLang === "uk" ? "ru" : "uk"; // Переключаем между русским и украинским
                             select.value = newLang;
                             select.dispatchEvent(new Event("change"));
-                
+
                             // Меняем текст кнопки
                             document.getElementById("translate-btn").innerText = newLang === "uk" ? "Русский" : "Українська мова";
+
                         } else {
-                            setTimeout(toggleLanguage, 500); // Если переводчик еще не загрузился, пробуем снова
+                            alert("Ошибка: Google Translate ещё не загрузился!");
                         }
                     }
                 </script>
-                
-                <!-- Подключаем Google Translate API -->
+
+                <!-- Подключение Google Translate API -->
                 <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-                
 
 
                 <style>
