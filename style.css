@@ -989,4 +989,13 @@ footer * {
 }
 
  
-
+/* Прячем Translate на мобилках *//* Прячем Translate на мобилках */
+@media (max-width: 768px) { /* Прячем Translate на мобилках */
+    .goog-te-banner-frame, .goog-te-gadget {
+        display: none !important;
+    }
+    body {
+        top: 0px !important;
+    }
+}
+/* Прячем Translate на мобилках *//* Прячем Translate на мобилках */
