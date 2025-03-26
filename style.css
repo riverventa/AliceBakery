@@ -32,6 +32,12 @@
 /* ============================
    ОСНОВНЫЕ СТИЛИ
    ============================ */
+
+   .goog-te-banner-frame, .goog-te-gadget {
+    display: none !important;
+}
+
+
 body {
 
     overflow-x: hidden; /* Отключает горизонтальную прокрутку */
