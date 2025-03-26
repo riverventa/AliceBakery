@@ -33,9 +33,10 @@
    ОСНОВНЫЕ СТИЛИ
    ============================ */
 
-   .goog-te-banner-frame, .goog-te-gadget {
-    display: none !important;
+   .body {
+    top: 0px !important;
 }
+
 
 
 body {
