@@ -10,18 +10,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link rel="stylesheet" href="style.css"> 
-      
-
-                   
-                <!-- КНОПКА ПЕРЕВОДА -->
-                <button id="translate-btn" onclick="toggleLanguage()" 
-                style="background: #c9fdd1; color: black; border: none; padding: 5px 10px; 
-                border-radius: 5px; cursor: pointer; font-size: 16px; position: absolute; top: 10px; right: 10px;">
-                Українська мова
-                </button>
-                <!-- КОНЕЦ КНОПКИ -->
-            
+         
+                           
 </head>
+
 
         <body class="home-page">
             <div class="container">
@@ -392,64 +384,7 @@
                 </script>
                 <!-- Прелоадер end -->
 
-
-
-
-                
-            <!-- Скрытый контейнер для Google Translate (НУЖЕН ДЛЯ РАБОТЫ!) -->
-            <div id="google_translate_element" style="display: none;"></div>
-
-                <!--  Скрипт (JS). Добавляем логику для инициализации Google Translate 
-                  и переключения языка.-->
-
-                  <!-- Скрипт для перевода -->
-                <script type="text/javascript">
-                    function googleTranslateElementInit() {
-                        new google.translate.TranslateElement({ pageLanguage: 'ru', includedLanguages: 'ru,uk' }, 'google_translate_element');
-                    }
-
-                    function toggleLanguage() {
-                        var select = document.querySelector(".goog-te-combo");
-                        if (select) {
-                            var currentLang = select.value;
-                            var newLang = currentLang === "uk" ? "ru" : "uk"; // Переключаем между русским и украинским
-                            select.value = newLang;
-                            select.dispatchEvent(new Event("change"));
-
-                            // Меняем текст кнопки
-                            document.getElementById("translate-btn").innerText = newLang === "uk" ? "Русский" : "Українська мова";
-
-                        } else {
-                            alert("Ошибка: Google Translate ещё не загрузился!");
-                        }
-                    }
-                </script>
-
-                <!-- Подключение Google Translate API -->
-                <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-
-
-                <style>
-                    /* Убираем баннер Google Translate */
-                    .goog-te-banner-frame {
-                        display: none !important;
-                    }
-                    body {
-                        top: 0px !important;
-                    }
-                
-                    /* Уменьшаем размер выпадающего списка переводчика */
-                    .goog-te-gadget {
-                        font-size: 0px !important;
-                    }
-                
-                    /* Прячем элементы интерфейса Google Translate */
-                    .goog-te-combo, .goog-te-gadget span {
-                        display: none !important;
-                    }
-                </style>
-                
-                
+       
 
 </body>
 </html>
