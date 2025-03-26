@@ -18,8 +18,8 @@
             style="background: #c9fdd1; color: black; border: none; padding: 5px 10px; 
             border-radius: 5px; cursor: pointer; font-size: 16px;">
             Українська мова
-            </button>    
-            <!-- GOOGLE TRANSLATE BUTTON END-->
+            </button>
+            <!-- Кнопка перевода END-->
    
 </head>
 
@@ -394,6 +394,7 @@
 
 
                 <!-- GOOGLE TRANSLATE -->
+              
                 <!-- Виджет Google Translate (скрытый) -->
                 <div id="google_translate_element" style="display: none;"></div>
 
@@ -403,7 +404,11 @@
                 <script type="text/javascript">
                     // Инициализация Google Translate
                     function googleTranslateElementInit() {
-                        new google.translate.TranslateElement({pageLanguage: 'ru', includedLanguages: 'ru,uk'}, 'google_translate_element');
+                        new google.translate.TranslateElement({
+                            pageLanguage: 'ru',
+                            includedLanguages: 'ru,uk',
+                            layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+                        }, 'google_translate_element');
                     }
 
                     // Переключение языка
@@ -421,17 +426,17 @@
                             alert("Ошибка: Google Translate ещё не загрузился!");
                         }
                     }
+
+                    // Ожидание загрузки Google Translate и скрытие баннера на мобильных устройствах
+                    window.addEventListener('load', function() {
+                        if (window.innerWidth <= 768) {
+                            document.getElementById('google_translate_element').style.display = 'none'; // Скрываем баннер на мобильных
+                        }
+                    });
                 </script>
 
                 <!-- Подключение Google Translate API (в конце страницы, перед закрывающимся </body>) -->
                 <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-
-                <!-- Убираем баннер Google Translate на мобильных устройствах -->
-                <script type="text/javascript">
-                    if (window.innerWidth <= 768) {
-                        document.getElementById('google_translate_element').style.display = 'none';
-                    }
-                </script>
 
                 <!-- GOOGLE TRANSLATE END-->
 
