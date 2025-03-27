@@ -561,32 +561,34 @@ h1, h2 {
 .free-lesson-button {
     display: inline-block;
     padding: 10px 20px;
-    background-color: #4CAF50;
-    color: white;
+    background-color: #cbfdcdcf;
+    color: #5C4033;
     text-decoration: none;
     border-radius: 5px;
     font-weight: bold;
     transition: background 0.3s;
+    border: 1.2px solid #5C4033;
 }
 
 .free-lesson-button:hover {
-    background-color: #45a049;
+    background-color: #67ee6e;
 }
 
 .buy-button {
     font-size: 16px;
     padding: 10px;
     margin-top: 10px;
-    border: 1px solid #5C4033;
+    border: 1.2px solid #5C4033;
     border-radius: 5px;
-    background-color: #efefed;
+    background-color: white;
     color: #5C4033;
     cursor: pointer;
     transition: background 0.3s;
+    width: 140%; /* Кнопка занимает 140% ширины родительского элемента */
 }
 
 .buy-button:hover {
-    background-color: #9cb2a5;
+    background-color: #cbfdcdcf;
 }
 
 /* ============================
