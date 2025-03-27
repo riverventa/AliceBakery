@@ -625,22 +625,23 @@ h1, h2 {
     }
 
     .lesson {
-        padding: 14px;
+        padding: 18px;
     }
 
     .lesson h3 {
-        font-size: 16px;
+        font-size: 18px;
     }
 
     .lesson p {
-        font-size: 14px;
+        font-size: 16px;
     }
 
     .buy-button {
         font-size: 16px;
         padding: 10px;
-        width: 180%;
+        width: 180px; /* Фиксированная ширина для мобильных */
     }
+    
 }
 
 
