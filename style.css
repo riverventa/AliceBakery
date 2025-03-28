@@ -50,6 +50,11 @@
     color: #333;
     background: #f8f3e7 url('images/background.jpg') center/cover no-repeat fixed;
 
+    /* Глобальные стили для body */
+    min-height: 100vh; /* Гарантирует, что футер не налезет */
+    display: flex;
+    flex-direction: column;
+
 }
 
 .home-button {
@@ -950,28 +955,27 @@ h1, h2 {
 }
 
 
-
+ /* Стили для контейнера видео (глобальные стили) */
+.video-container {
+    position: relative;
+    width: 100%;
+    padding-top: 56.25%; /* (9 / 16) * 100 для соблюдения пропорций 16:9 */
+    margin-bottom: 50px; /* Отступ снизу, чтобы видео не перекрывало футер */
+    box-sizing: border-box; /* Учитывает padding */
+}
 
 /* ============================
    YOUTUBE Video / MP4 Видео (16:9) на мобильных
    ============================ */
-
-   @media (max-width: 768px) { /* Смартфоны */
-    .video-container {
-        position: relative;
-        width: 100%; /* Видео будет занимать всю ширину */
-        padding-top: 56.25%; /* (9 / 16) * 100 для соблюдения пропорций 16:9 */
-        margin-bottom: 50px; /* Отступ снизу, чтобы видео не перекрывало футер */
-        box-sizing: border-box; /* Учитывает padding */
-    }
-
+@media (max-width: 768px) { /* Смартфоны */
     .video-container iframe {
         position: absolute;
         top: 0;
         left: 0;
-        width: 100%;  /* Ширина видео 100% от контейнера */
-        height: 100%; /* Высота видео 100% от контейнера */
-        border: none; /* Без рамки */
+        width: 100%;
+        height: auto; /* Вместо height: 100% */
+        aspect-ratio: 16 / 9; /* Гарантирует сохранение пропорций */
+        border: none;
     }
 }
 
