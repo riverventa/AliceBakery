@@ -170,9 +170,50 @@
                             <a href="lesson2.html" class="free-lesson-button">Смотреть бесплатно</a>
                         </div>
 
-                        <!-- Урок 3 -->
 
-                        <div class="lesson">
+
+                        <!-- Урок 3 ВРЕМЕННЫЙ ДОСТУП ЧЕРЕЗ ПАРОЛЬ-->
+
+                    <div class="lesson">
+                        <img src="banner3.jpg" alt="Урок 3">
+                        <h3>Мой любимый торт</h3>
+                        <p>Идеальный рецепт для любого праздника.</p>
+                        
+                        <!-- Форма для ввода пароля -->
+                        <form method="POST" action="">
+                            <label for="password">Введите пароль для доступа:</label>
+                            <input type="password" id="password" name="password" required>
+                            <button type="submit" class="buy-button">Получить доступ</button>
+                        </form>
+                        
+                        <!-- Вставим PHP код для проверки пароля -->
+                        <?php
+                        // Пример пароля администратора
+                        $admin_password = "admin123";  // Твой пароль
+
+                        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+                            $entered_password = $_POST['password'];
+
+                            // Проверка пароля
+                            if ($entered_password == $admin_password) {
+                                echo "<div class='video-container'>
+                                        <video width='560' height='315' controls>
+                                            <source src='https://drive.google.com/uc?export=download&id=1QlG0yVcykHeLOuh_0IbP8mtrXm0hV-5D' type='video/mp4'>
+                                            Ваш браузер не поддерживает воспроизведение видео.
+                                        </video>
+                                    </div>";
+                            } else {
+                                echo "<p style='color:red;'>Неверный пароль! Пожалуйста, попробуйте снова.</p>";
+                            }
+                        }
+                        ?>
+                    </div>
+
+                     <!-- Урок 3 ВРЕМЕННЫЙ ДОСТУП ЧЕРЕЗ ПАРОЛЬ - КОНЕЦ-->
+
+
+                        <!-- Урок 3 -->
+                         <!-- <div class="lesson">
                             <img src="banner3.jpg" alt="Урок 3">
                             <h3>Мой любимый торт</h3>
                             <p>Идеальный рецепт для любого праздника.</p>
@@ -181,7 +222,7 @@
                                 <input type="hidden" name="signature" value="ПОДПИСЬ_УРОКА_3">
                                 <button type="submit" class="buy-button">Купить</button>
                             </form>
-                        </div>
+                        </div> -->
 
                         <!-- Урок 4 -->
 
