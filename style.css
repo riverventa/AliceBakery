@@ -1087,7 +1087,7 @@ footer * {
    Політика конфіденційності КНОПКА
    ======================================================== */
 .home-button {
-    background-color: #98dd9a; /* Зеленый фон */
+    background-color: #d1f6d3; /* Зеленый фон */
     color: white;
     padding: 10px 20px;
     text-decoration: none;
@@ -1097,5 +1097,5 @@ footer * {
 }
 
 .home-button:hover {
-    background-color: #2cca33; /* Более темный зеленый при наведении */
+    background-color: #3cf945; /* Более темный зеленый при наведении */
 }
