@@ -109,7 +109,7 @@ h1, h2 {
 /* ============================
    СЛАЙДЕР С ДЕСЕРТАМИ
    ============================ */
-#dessert-slider {
+   #dessert-slider {
     overflow: hidden;
     padding: 10px;
     background: #fff5e1; /* Светлый фон */
@@ -124,8 +124,7 @@ h1, h2 {
 .slider {
     display: flex;
     width: 250%;
-    animation: slideLeft 30s linear infinite;
-    animation-play-state: paused; /* Останавливаем анимацию по умолчанию */
+    animation: slideLeft 30s linear infinite; /* Убираем animation-play-state: paused; */
 }
 
 .slider img {
@@ -144,17 +143,6 @@ h1, h2 {
     0% { transform: translateX(0); }
     100% { transform: translateX(-50%); } /* Сдвигаем на половину */
 }
-
-/* Анимация работает по умолчанию */
-.slider {
-    animation: slide 10s linear infinite;
-}
-
-/* При наведении на контейнер анимация останавливается */
-.slider-container:hover .slider {
-    animation-play-state: paused;
-}
-
 
 /* ====================================
    адаптация для мобильных и планшетов
@@ -206,6 +194,7 @@ h1, h2 {
         font-size: 20px;
     }
 }
+
 
 
 /* ============================
