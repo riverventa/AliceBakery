@@ -1091,6 +1091,7 @@ footer * {
     color: rgba(93, 56, 56, 0.731);
     padding: 10px 20px;
     text-decoration: none;
+    border: 1px solid #361f1f;
     border-radius: 5px;
     font-size: 16px;
     display: inline-block;
