@@ -620,7 +620,7 @@ h1, h2 {
     color: #5C4033;
     cursor: pointer;
     transition: background 0.3s;
-    width: 140%; /* Кнопка занимает 140% ширины родительского элемента */
+    width: 150px; /* width: 140%; /* Кнопка занимает 140% ширины родительского элемента */
 }
 
 .buy-button:hover {
