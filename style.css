@@ -1083,4 +1083,19 @@ footer * {
     display: none !important;
 }
 
- 
+ /* ========================================================
+   Політика конфіденційності КНОПКА
+   ======================================================== */
+.home-button {
+    background-color: #4CAF50; /* Зеленый фон */
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 16px;
+    display: inline-block;
+}
+
+.home-button:hover {
+    background-color: #45a049; /* Более темный зеленый при наведении */
+}
