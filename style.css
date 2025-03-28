@@ -273,7 +273,7 @@ h1, h2 {
 @media (max-width: 768px) {
     .banner {
         background: url('public/images/banner-mobile.png') center/cover no-repeat;
-        height: 200px;
+        height: 27vh; /* Баннер занимает 30% высоты экрана на мобильных */
         display: flex;
         align-items: center;
         justify-content: center;
@@ -317,6 +317,7 @@ h1, h2 {
    .lesson-page .banner {
     background: url('public/images/lesson-banner.png') center/cover no-repeat;
     position: relative; /* Чтобы ::before работал правильно */
+    height: 50vh; /* Баннер занимает всю высоту экрана */
 }
 
 .lesson-page .banner::before {
@@ -335,6 +336,7 @@ h1, h2 {
     flex-direction: column; /* Размещаем элементы вертикально */
     align-items: center; /* Центрируем содержимое */
     gap: 5px; /* Отступ между h1 и p */
+    z-index: 1; /* Чтобы контент был поверх фонового изображения */
 }
 
 .lesson-page .banner h1 {
@@ -366,11 +368,37 @@ h1, h2 {
     display: inline-block;
     border-radius: 5px;
 }
+
+/* ============================
+   КНОПКИ НА БАННЕРЕ
+   ============================ */
+.home-button {
+    position: absolute;
+    top: 20px; /* Располагаем кнопку сверху */
+    left: 20px; /* Располагаем кнопку слева */
+    background: rgba(0, 0, 0, 0.7); /* Прозрачный фон */
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 16px;
+    z-index: 2; /* Кнопка будет поверх баннера */
+}
+
+.home-button:hover {
+    background: rgba(0, 0, 0, 0.9);
+}
+
 /* ============================
    адаптация для мобильных телефонов
    ============================ */
 
-   @media (max-width: 768px) {
+@media (max-width: 768px) {
+
+    .lesson-page .banner {
+        height: 25vh; /* Баннер занимает 25% высоты экрана на мобильных */
+    }
+
     .lesson-page .banner h1 {
         font-size: 18px;
         text-align: center;
@@ -386,6 +414,11 @@ h1, h2 {
 
     .lesson-page .banner-content {
         gap: 3px; /* Уменьшаем отступы между элементами */
+    }
+
+    .home-button {
+        top: 10px; /* Смещаем кнопку немного ближе к верхнему краю */
+        left: 10px; /* Смещаем кнопку немного к левому краю */
     }
 }
 
