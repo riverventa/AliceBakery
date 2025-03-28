@@ -1088,15 +1088,15 @@ footer * {
    ======================================================== */
 .home-button {
     background-color: #d1f6d3; /* Зеленый фон */
-    color: rgba(93, 56, 56, 0.731);
+    color: #361f1f;
     padding: 10px 20px;
     text-decoration: none;
-    border: 2px solid #361f1f;
+    border: 1,5px solid #361f1f;
     border-radius: 5px;
     font-size: 16px;
     display: inline-block;
 }
 
 .home-button:hover {
-    background-color: #3cf945; /* Более темный зеленый при наведении */
+    background-color: #aecce8; /* Более темный зеленый при наведении */
 }
