@@ -35,7 +35,7 @@
 
 
 
-body {
+   body {
 
     overflow-x: hidden; /* Отключает горизонтальную прокрутку */
 
@@ -929,26 +929,28 @@ h1, h2 {
 
 
 /* ============================
-   YOUTUBE Video
+   YOUTUBE Video Видео (16:9) на мобильных
    ============================ */
 
-   .video-container {
-    position: relative;
-    width: 95%; /* 95% ширины экрана */
-    max-width: 900px;
-    margin: 0 auto;
-    padding-top: 56.25%; /* (9 / 16) * 100 для соблюдения пропорций */
-    box-sizing: border-box; /* Учитываем padding */
+   @media (max-width: 768px) { /* Смартфоны */
+    .video-container {
+        position: relative;
+        width: 100%; /* Видео будет занимать всю ширину */
+        padding-top: 56.25%; /* (9 / 16) * 100 для соблюдения пропорций 16:9 */
+        margin-bottom: 50px; /* Отступ снизу, чтобы видео не перекрывало футер */
+        box-sizing: border-box; /* Учитывает padding */
+    }
+
+    .video-container iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;  /* Ширина видео 100% от контейнера */
+        height: 100%; /* Высота видео 100% от контейнера */
+        border: none; /* Без рамки */
+    }
 }
 
-.video-container iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border: none;
-}
 
 /* ============================
    ФУТЕР (ПОДВАЛ САЙТА)
