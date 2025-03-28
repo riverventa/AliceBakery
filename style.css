@@ -75,7 +75,7 @@
     background-color: #3ba4b3;
     color: rgba(134, 98, 6, 0.626);
     text-align: center;
-    padding: 20px;
+    padding: 10px;
 }
 
 header h1 {
@@ -361,11 +361,12 @@ h1, h2 {
 /* ============================
    КНОПКИ НА БАННЕРЕ
    ============================ */
-.home-button {
+   .home-button {
     position: absolute;
     top: 20px; /* Располагаем кнопку сверху */
     left: 20px; /* Располагаем кнопку слева */
-    background: rgba(0, 0, 0, 0.7); /* Прозрачный фон */
+    background: rgba(70, 40, 1, 0.7); /* Прозрачный фон */
+    border: 1px solid white; /* Белая окантовка толщиной 1px */
     color: white;
     padding: 10px 20px;
     border-radius: 5px;
@@ -373,6 +374,7 @@ h1, h2 {
     font-size: 16px;
     z-index: 2; /* Кнопка будет поверх баннера */
 }
+
 
 .home-button:hover {
     background: rgba(0, 0, 0, 0.9);
