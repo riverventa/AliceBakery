@@ -72,7 +72,7 @@
    HEADER (ШАПКА САЙТА)
    ============================ */
    header {
-    background-color: #3ba4b3;
+    background-color: #c9cccc;
     color: rgba(134, 98, 6, 0.626);
     text-align: center;
     padding: 10px;
@@ -984,8 +984,10 @@ h1, h2 {
     background: url('public/images/footer-bg.png') center/cover no-repeat;
     color: #fff; /* Белый текст */
     text-shadow: 
-        2px 2px 4px rgba(0, 0, 0, 1), 
-        0px 0px 10px rgba(0, 0, 0, 0.8);
+        4px 4px 8px rgba(0, 0, 0, 0.8),  /* Основная тень с увеличением размытия */
+        0px 0px 15px rgba(0, 0, 0, 0.9), /* Вторая тень, немного менее размытой */
+        0px 0px 25px rgba(0, 0, 0, 1),   /* Сильно размытую тень с чёрным цветом */
+        1px 1px 5px rgba(0, 0, 0, 0.6);  /* Мелкая тень для эффекта объема */
     text-align: center;
     padding: 30px 20px; /* Чуть больше отступ */
     position: relative;
@@ -993,6 +995,8 @@ h1, h2 {
     z-index: 10;
     background-color: #333; /* Темный фон */
 }
+
+
 
 footer::before {
     content: "";
