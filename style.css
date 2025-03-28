@@ -1088,7 +1088,7 @@ footer * {
    ======================================================== */
 .home-button {
     background-color: #d1f6d3; /* Зеленый фон */
-    color: white;
+    color: rgba(93, 56, 56, 0.731);
     padding: 10px 20px;
     text-decoration: none;
     border-radius: 5px;
