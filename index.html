@@ -175,48 +175,7 @@
                    
 <!-- Урок 3 ВРЕМЕННЫЙ ДОСТУП ЧЕРЕЗ ПАРОЛЬ -->  <!-- Урок 3 ВРЕМЕННЫЙ ДОСТУП ЧЕРЕЗ ПАРОЛЬ-->
 
-                <div class="lesson">
-                    <img src="banner3.jpg" alt="Урок 3">
-                    <h3>Мой любимый торт</h3>
-                    <p>Идеальный рецепт для любого праздника.</p>
-                    
-                    <!-- Форма для ввода пароля -->
-                    <form id="password-form">
-                        <label for="password">Введите пароль для доступа:</label>
-                        <input type="password" id="password" name="password" required>
-                        <button type="submit" class="buy-button">Получить доступ</button>
-                    </form>
-                    
-                    <div id="video-container" style="display:none;">
-                        <video width="560" height="315" controls>
-                            <source src="https://drive.google.com/uc?export=download&id=1QlG0yVcykHeLOuh_0IbP8mtrXm0hV-5D" type="video/mp4">
-                            Ваш браузер не поддерживает воспроизведение видео.
-                        </video>
-                    </div>
-
-                    <p id="error-message" style="color:red; display:none;">Неверный пароль! Пожалуйста, попробуйте снова.</p>
-                </div>
-
-                <script>
-                    const correctPassword = "admin123";  // Установите свой пароль
-                    const passwordForm = document.getElementById("password-form");
-                    const videoContainer = document.getElementById("video-container");
-                    const errorMessage = document.getElementById("error-message");
-
-                    passwordForm.addEventListener("submit", function(event) {
-                        event.preventDefault();  // Отменяет стандартное действие формы
-
-                        const enteredPassword = document.getElementById("password").value;
-
-                        if (enteredPassword === correctPassword) {
-                            videoContainer.style.display = "block";  // Показываем видео
-                            errorMessage.style.display = "none";    // Скрываем сообщение об ошибке
-                            passwordForm.style.display = "none";    // Скрываем форму
-                        } else {
-                            errorMessage.style.display = "block";  // Показываем ошибку
-                        }
-                    });
-                </script>
+                
 
 <!-- Урок 3 ВРЕМЕННЫЙ ДОСТУП ЧЕРЕЗ ПАРОЛЬ - КОНЕЦ-->  <!-- Урок 3 ВРЕМЕННЫЙ ДОСТУП ЧЕРЕЗ ПАРОЛЬ - КОНЕЦ-->
 
