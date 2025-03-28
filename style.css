@@ -972,9 +972,10 @@ h1, h2 {
         top: 0;
         left: 0;
         width: 100%;  /* Ширина видео 100% от контейнера */
-        height: 100%; /* Высота видео 100% от контейнера */
+        height: 200px;
         border: none; /* Без рамки */
     }
+     
 }
 
 
@@ -1090,6 +1091,10 @@ footer * {
     display: none !important;
 }
 
+/* ========================================================
+   home button home button home button home button home bu
+   ======================================================== */
+
 .home-button {
     position: fixed;
     top: 10px;
@@ -1109,3 +1114,6 @@ footer * {
     background-color: #aecce8; /* Более темный зеленый при наведении */
 }
 
+
+
+   
