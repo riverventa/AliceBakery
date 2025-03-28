@@ -668,6 +668,7 @@ h1, h2 {
 .container {
     max-width: 1100px;
     margin: 0 auto;
+    box-sizing: border-box; /* Учитываем padding в ширине */
 }
 
 /* Обёртка чата и информационного блока */
@@ -687,6 +688,7 @@ h1, h2 {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    box-sizing: border-box; /* Учитываем padding в ширине */
 }
 
 /* Чат */
@@ -698,6 +700,7 @@ h1, h2 {
     padding: 15px;
     display: flex;
     flex-direction: column;
+    box-sizing: border-box; /* Учитываем padding в ширине */
 }
 
 /* Одинаковая высота */
@@ -714,7 +717,6 @@ h1, h2 {
     padding: 15px;
     height: 100%; /* Устанавливаем высоту в 100% от родительского контейнера */
 }
-
 
 /* Поле ввода и кнопки */
 #chat-controls {
@@ -774,7 +776,7 @@ h1, h2 {
 }
 
 /* =====================================
-   адаптация для планшетов и мобидбных
+   адаптация для планшетов и мобильных
    ===================================== */
 
 @media (max-width: 1024px) { /* Планшеты */
@@ -785,72 +787,63 @@ h1, h2 {
 
     .left-panel, #chat {
         width: 100%; /* Растягиваем на всю ширину */
+        box-sizing: border-box; /* Учитываем padding в ширине */
     }
 }
 
 @media (max-width: 768px) { /* мобильные */
+
     /* Общий контейнер (по ширине дисплея) */
     .container {
-        width: 100%;  /* 100% вместо max-width: 100vw */
-        max-width: 100vw; /* Ограничение по ширине экрана */
+        max-width: 100vw;
         height: auto;
         margin: 0 auto;
-        overflow-x: hidden; /* Запрещаем горизонтальный скролл */
+        box-sizing: border-box; /* Учитываем padding в ширине */
+    }
+
+    /* Обёртка чата и информационного блока */
+    .chat-wrapper {
+        flex-direction: column;
+        gap: 15px;
+        width: 100%;
+        box-sizing: border-box; /* Учитываем padding в ширине */
+    }
+
+    .left-panel, #chat {
+        width: 100%; /* Устанавливаем ширину на 100% */
+        padding: 10px;
+        box-sizing: border-box; /* Учитываем padding в ширине */
+    }
+
+    #chat-controls {
+        flex-direction: column;
+    }
+
+    #chat-input {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    #send-btn, #clear-btn, .moderator-login {
+        width: 100%;
+        padding: 12px;
+        font-size: 14px;
+    }
+
+    #chat {
+        min-height: 500px !important;
+    }
+
+    #chat-box {
+        height: 100% !important;
+        min-height: 400px !important;
+    }
+
+    iframe {
+        height: 100% !important;
+        min-height: 400px !important;
     }
 }
-
-
-
-
-/* Стили для адаптивности */
-
-    #tawkto-button {
-        display: none !important;
-    }
-
-    @media (max-width: 768px) {
-        .chat-wrapper {
-            flex-direction: column;
-            height: auto;
-            gap: 15px;
-        }
-
-        .left-panel, #chat {
-            width: 100%;
-            padding: 10px;
-        }
-
-        #chat-controls {
-            flex-direction: column;
-        }
-
-        #chat-input {
-            width: 100%;
-            margin-bottom: 10px;
-        }
-
-        #send-btn, #clear-btn, .moderator-login {
-            width: 100%;
-            padding: 12px;
-            font-size: 14px;
-        }
-
-        #chat {
-            min-height: 500px !important;
-        }
-
-        #chat-box {
-            height: 100% !important;
-            min-height: 400px !important;
-        }
-
-        iframe {
-            height: 100% !important;
-            min-height: 400px !important;
-        }
-    }
-
-
 
 
 
@@ -936,10 +929,32 @@ h1, h2 {
 
 
 /* ============================
+   YOUTUBE Video
+   ============================ */
+
+   .video-container {
+    position: relative;
+    width: 95%; /* 95% ширины экрана */
+    max-width: 900px;
+    margin: 0 auto;
+    padding-top: 56.25%; /* (9 / 16) * 100 для соблюдения пропорций */
+    box-sizing: border-box; /* Учитываем padding */
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* ============================
    ФУТЕР (ПОДВАЛ САЙТА)
    ============================ */
 
-   footer {
+footer {
     background: url('public/images/footer-bg.png') center/cover no-repeat;
     color: #fff; /* Белый текст */
     text-shadow: 
@@ -949,6 +964,7 @@ h1, h2 {
     padding: 30px 20px; /* Чуть больше отступ */
     position: relative;
     width: 100%;
+    z-index: 10;
 }
 
 footer::before {
@@ -966,9 +982,10 @@ footer * {
     z-index: 1;
 }
 
+
 /* ===================================
    адаптация для планшетов и мобильных
-   ============================ */
+   =================================== */
 
 @media (max-width: 1024px) { /* Планшеты */
     footer {
@@ -978,48 +995,25 @@ footer * {
 }
 
 @media (max-width: 768px) { /* Смартфоны */
-    
     footer {
         padding: 20px 10px;
-        font-size: 14px;
-        width: 100%;
-        max-width: 100vw;
-        height: auto;
-        margin: 0 auto;
-        overflow-x: hidden;
-        box-sizing: border-box;
-        position: relative;
-        left: 0;
-        right: 0;
-        z-index: 10; /* Поднимаем футер выше */
+        font-size: 14px; /* Чуть уменьшаем шрифт */
+        width: 100%; /* Футер будет занимать всю ширину */
+        box-sizing: border-box; /* Учитывает padding в ширине */
+        margin: 0; /* Убираем возможные внешние отступы */
     }
-}   
 
+    .video-container {
+        width: 100%; /* Видео будет занимать всю ширину экрана */
+        max-width: 100%;
+        padding-top: 56.25%; /* 16:9 */
+    }
 
-/* ============================
-   YOUTUBE Video YOUTUBE Video 
-   ============================ */
-
-   .video-container {
-    position: relative;
-    width: 95%; /* 95% ширины экрана */
-    max-width: 900px;
-    margin: 0 auto;
-    padding-top: 56.25% !important; /* (9 / 16) * 100 для соблюдения пропорций */
-    z-index: 1; /* Видео ниже футера */
+    .video-container iframe {
+        height: 100%;
+    }
 }
 
-.video-container iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border: none;
-}
-
-
-/* YOUTUBE Video END *//* YOUTUBE Video END */
 
 
 #tawkto-button {
@@ -1027,3 +1021,6 @@ footer * {
 }
 
  
+/* ========================================================
+   СТИЛИ ДЛЯ СТРАНИЦ УРОКОВ мобильное отображение 
+   ======================================================== */
