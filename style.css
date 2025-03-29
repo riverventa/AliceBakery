@@ -172,14 +172,17 @@ h1, h2 {
     }
 
     .slider img {
-        width: 25%;
-        max-width: 160px;
+        width: 40% !important; /* Увеличиваем ширину */
+        max-width: 220px !important; /* Поднимаем ограничение */
+        height: auto !important; /* Сохраняем пропорции */
     }
 
     h1, h2 {
-        font-size: 24px;
+        font-size: 26px;
     }
 }
+
+
 
 @media (max-width: 480px) { /* Маленькие смартфоны */
     main {
@@ -341,9 +344,9 @@ h1, h2 {
 }
 
 .lesson-page .banner-content h1 {
-    background: rgba(0, 0, 0, 0.4); /* Затемняем фон */
+    background: rgba(0, 0, 0, 0.3);
     color: #fff;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9);
+    text-shadow: 12px 12px 24px rgba(0, 0, 0, 1); /* увеличено смещение и размытие */
     padding: 10px 15px;
     border-radius: 5px;
     display: inline-block;
@@ -352,8 +355,8 @@ h1, h2 {
 /* Оформление текста в баннере на страницах уроков */
 .lesson-page .banner-content p {
     color: #fff;
-    background: rgba(0, 0, 0, 0.4);
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+    background: rgba(0, 0, 0, 0.3);
+    text-shadow: 12px 12px 24px rgba(0, 0, 0, 1); /* увеличено смещение и размытие */
     padding: 1px 10px;
     display: inline-block;
     border-radius: 5px;
@@ -991,21 +994,19 @@ h1, h2 {
 
    footer {
     background: url('public/images/footer-bg.png') center/cover no-repeat;
-    color: #fff; /* Белый текст */
+    color: #fff;
     text-shadow: 
-        4px 4px 8px rgba(0, 0, 0, 0.8),  /* Основная тень с увеличением размытия */
-        0px 0px 15px rgba(0, 0, 0, 0.9), /* Вторая тень, немного менее размытой */
-        0px 0px 25px rgba(0, 0, 0, 1),   /* Сильно размытую тень с чёрным цветом */
-        1px 1px 5px rgba(0, 0, 0, 0.6);  /* Мелкая тень для эффекта объема */
+        2px 2px 6px rgba(0, 0, 0, 0.5),  /* Уменьшена интенсивность */
+        0px 0px 10px rgba(0, 0, 0, 0.7), 
+        0px 0px 15px rgba(0, 0, 0, 0.9),
+        1px 1px 3px rgba(0, 0, 0, 0.4);
     text-align: center;
-    padding: 30px 20px; /* Чуть больше отступ */
+    padding: 30px 20px;
     position: relative;
     width: 100%;
     z-index: 10;
     background-color: #333; /* Темный фон */
 }
-
-
 
 footer::before {
     content: "";
@@ -1014,8 +1015,9 @@ footer::before {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.2); /* Затемнение 20% */
+    background: rgba(0, 0, 0, 0.15); /* Понижено затемнение */
 }
+
 
 footer * {
     position: relative;
@@ -1075,7 +1077,7 @@ footer * {
 @media (max-width: 768px) { /* Смартфоны */
     footer {
         padding: 20px 10px;
-        font-size: 16px; /* Чуть уменьшаем шрифт */
+        font-size: 18px; /* Чуть уменьшаем шрифт */
         width: 100%; /* Футер будет занимать всю ширину */
         box-sizing: border-box; /* Учитывает padding в ширине */
         margin: 0; /* Убираем возможные внешние отступы */
