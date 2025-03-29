@@ -980,7 +980,10 @@ h1, h2 {
         height: 100%;
         border: none; /* Без рамки */
     }
-     
+
+    #lesson-video, #lesson-description {
+        margin-bottom: 15px; /* Отступ между секциями */
+    }
 }
 
 
