@@ -98,6 +98,7 @@ main {
 p {
     line-height: 1.6;
     margin-bottom: 15px;
+    color: #4B2C20; /* темно-коричневый цвет */
 }
 
 h1, h2 {
