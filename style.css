@@ -282,7 +282,7 @@ h1, h2 {
 @media (max-width: 768px) {
     .banner {
         background: url('public/images/banner-mobile.png') center/cover no-repeat;
-        height: 32vh; /* Баннер занимает 30% высоты экрана на мобильных */
+        height: 35vh; /* Баннер занимает 35% высоты экрана на мобильных */
         display: flex;
         align-items: center;
         justify-content: center;
