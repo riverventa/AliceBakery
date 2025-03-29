@@ -344,9 +344,13 @@ h1, h2 {
 }
 
 .lesson-page .banner-content h1 {
-    background: rgba(0, 0, 0, 0.3);
+    background: rgba(0, 0, 0, 0.1);
     color: #fff;
-    text-shadow: 12px 12px 24px rgba(0, 0, 0, 1); /* увеличено смещение и размытие */
+    text-shadow: 
+        4px 4px 8px rgba(0, 0, 0, 0.8),  /* Основная тень с увеличением размытия */
+        0px 0px 15px rgba(0, 0, 0, 0.9), /* Вторая тень, немного менее размытой */
+        0px 0px 25px rgba(0, 0, 0, 1),   /* Сильно размытую тень с чёрным цветом */
+        1px 1px 5px rgba(0, 0, 0, 0.6);  /* Мелкая тень для эффекта объема */
     padding: 10px 15px;
     border-radius: 5px;
     display: inline-block;
@@ -355,8 +359,12 @@ h1, h2 {
 /* Оформление текста в баннере на страницах уроков */
 .lesson-page .banner-content p {
     color: #fff;
-    background: rgba(0, 0, 0, 0.3);
-    text-shadow: 12px 12px 24px rgba(0, 0, 0, 1); /* увеличено смещение и размытие */
+    background: rgba(0, 0, 0, 0.1);
+    text-shadow: 
+        4px 4px 8px rgba(0, 0, 0, 0.8),  /* Основная тень с увеличением размытия */
+        0px 0px 15px rgba(0, 0, 0, 0.9), /* Вторая тень, немного менее размытой */
+        0px 0px 25px rgba(0, 0, 0, 1),   /* Сильно размытую тень с чёрным цветом */
+        1px 1px 5px rgba(0, 0, 0, 0.6);  /* Мелкая тень для эффекта объема */
     padding: 1px 10px;
     display: inline-block;
     border-radius: 5px;
@@ -391,18 +399,30 @@ h1, h2 {
 @media (max-width: 768px) {
 
     .lesson-page .banner {
-        height: 25vh; /* Баннер занимает 25% высоты экрана на мобильных */
+        height: 30vh; /* Баннер занимает 30% высоты экрана на мобильных */
+
+        text-shadow: 
+        4px 4px 8px rgba(0, 0, 0, 0.8),  /* Основная тень с увеличением размытия */
+        0px 0px 15px rgba(0, 0, 0, 0.9), /* Вторая тень, немного менее размытой */
+        0px 0px 25px rgba(0, 0, 0, 1),   /* Сильно размытую тень с чёрным цветом */
+        1px 1px 5px rgba(0, 0, 0, 0.6);  /* Мелкая тень для эффекта объема */
     }
 
     .lesson-page .banner h1 {
-        font-size: 18px;
+        font-size: 20px;
         text-align: center;
         padding: 8px 12px;
         transform: translateX(1px); /* Сусловно двигаем текст вправо */
+
+        text-shadow: 
+        4px 4px 8px rgba(0, 0, 0, 0.8),  /* Основная тень с увеличением размытия */
+        0px 0px 15px rgba(0, 0, 0, 0.9), /* Вторая тень, немного менее размытой */
+        0px 0px 25px rgba(0, 0, 0, 1),   /* Сильно размытую тень с чёрным цветом */
+        1px 1px 5px rgba(0, 0, 0, 0.6);  /* Мелкая тень для эффекта объема */
     }
 
     .lesson-page .banner p {
-        font-size: 16px;
+        font-size: 18px;
         text-align: center;
         padding: 5px 10px;
     }
