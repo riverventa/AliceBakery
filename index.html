@@ -79,7 +79,7 @@
                 <!-- Кнопка изменения языка END -->
 
             
-                <main>
+<main>
                     <section id="about">
                         <h2>Добро пожаловать в мир сладких чудес!</h2>
                         <p class="about-text">
@@ -125,25 +125,25 @@
                         
         
        
-        <!-- Горизонтально движущиеся изображения десертов -->
-        <div class="container">
-            <section id="dessert-slider">
-                <div class="slider-container">
-                    <div class="slider">
-                        <img src="public/images/dessert1.jpg" alt="Десерт 1">
-                        <img src="public/images/dessert2.jpg" alt="Десерт 2">
-                        <img src="public/images/dessert3.jpg" alt="Десерт 3">
-                        <img src="public/images/dessert4.jpg" alt="Десерт 4">
-                        <img src="public/images/dessert5.jpg" alt="Десерт 5">
-                        <img src="public/images/dessert6.jpg" alt="Десерт 6">
-                        <img src="public/images/dessert7.jpg" alt="Десерт 7">
-                        <img src="public/images/dessert8.jpg" alt="Десерт 8">
-                        <img src="public/images/dessert9.jpg" alt="Десерт 9">
-                        <img src="public/images/dessert10.jpg" alt="Десерт 10">
-                    </div>
-                </div>
-            </section>
-        </div>
+                        <!-- Горизонтально движущиеся изображения десертов -->
+                        <div class="container">
+                            <section id="dessert-slider">
+                                <div class="slider-container">
+                                    <div class="slider">
+                                        <img src="public/images/dessert1.jpg" alt="Десерт 1">
+                                        <img src="public/images/dessert2.jpg" alt="Десерт 2">
+                                        <img src="public/images/dessert3.jpg" alt="Десерт 3">
+                                        <img src="public/images/dessert4.jpg" alt="Десерт 4">
+                                        <img src="public/images/dessert5.jpg" alt="Десерт 5">
+                                        <img src="public/images/dessert6.jpg" alt="Десерт 6">
+                                        <img src="public/images/dessert7.jpg" alt="Десерт 7">
+                                        <img src="public/images/dessert8.jpg" alt="Десерт 8">
+                                        <img src="public/images/dessert9.jpg" alt="Десерт 9">
+                                        <img src="public/images/dessert10.jpg" alt="Десерт 10">
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
 
         
                           <!-- Уроки -->
@@ -175,39 +175,39 @@
 
 
                    
-<!-- Урок 3 ВРЕМЕННЫЙ ДОСТУП ЧЕРЕЗ ПАРОЛЬ -->  <!-- Урок 3 ВРЕМЕННЫЙ ДОСТУП ЧЕРЕЗ ПАРОЛЬ-->
+                        <!-- Урок 3 ВРЕМЕННЫЙ ДОСТУП ЧЕРЕЗ ПАРОЛЬ -->  <!-- Урок 3 ВРЕМЕННЫЙ ДОСТУП ЧЕРЕЗ ПАРОЛЬ-->
 
-                    <!-- Урок 3 -->
+                                <!-- Урок 3 -->
 
-        <div class="lesson">
-            <img src="public/images/banner/banner3.jpg" alt="Урок 3">
+                    <div class="lesson">
+                        <img src="public/images/banner/banner3.jpg" alt="Урок 3">
 
-            <h3> Кулич "Краффин"</h3>
-            <p>Идеальный рецепт для любого праздника.</p>
+                        <h3> Кулич "Краффин"</h3>
+                        <p>Идеальный рецепт для любого праздника.</p>
 
-            <button class="buy-button" onclick="checkPassword()">Купить</button>
-        </div>
+                        <button class="buy-button" onclick="checkPassword()">Купить</button>
+                    </div>
 
-        <script>
-            // Пример пароля администратора
-            const correctPassword = "OELlapCw8H34#22";  // Задай свой пароль
+                    <script>
+                        // Пример пароля администратора
+                        const correctPassword = "OELlapCw8H34#22";  // Задай свой пароль
 
-            function checkPassword() {
-                // Запрашиваем пароль
-                let enteredPassword = prompt("Введите пароль для доступа:");
+                        function checkPassword() {
+                            // Запрашиваем пароль
+                            let enteredPassword = prompt("Введите пароль для доступа:");
 
-                // Проверка пароля
-                if (enteredPassword === correctPassword) {
-                    // Если пароль правильный, перенаправляем на страницу с уроком
-                    window.location.href = "/lesson3.html";  // Укажи правильный URL страницы с уроком 3
-                } else {
-                    alert("Неверный пароль! Попробуйте снова.");
-                }
-            }
-        </script>
-        
+                            // Проверка пароля
+                            if (enteredPassword === correctPassword) {
+                                // Если пароль правильный, перенаправляем на страницу с уроком
+                                window.location.href = "/lesson3.html";  // Укажи правильный URL страницы с уроком 3
+                            } else {
+                                alert("Неверный пароль! Попробуйте снова.");
+                            }
+                        }
+                    </script>
+                    
 
-<!-- Урок 3 ВРЕМЕННЫЙ ДОСТУП ЧЕРЕЗ ПАРОЛЬ - КОНЕЦ-->  <!-- Урок 3 ВРЕМЕННЫЙ ДОСТУП ЧЕРЕЗ ПАРОЛЬ - КОНЕЦ-->
+                    <!-- Урок 3 ВРЕМЕННЫЙ ДОСТУП ЧЕРЕЗ ПАРОЛЬ - КОНЕЦ-->  <!-- Урок 3 ВРЕМЕННЫЙ ДОСТУП ЧЕРЕЗ ПАРОЛЬ - КОНЕЦ-->
 
 
                         <!-- Урок 3 -->
@@ -318,7 +318,119 @@
 
 
         
-    </main>
+    
+
+            <!-- ============== start faq section ========== -->
+            <section class="faq" id="faq">
+                <h2>Часто задаваемые вопросы (FAQ)</h2>
+            
+                <div class="faq-item">
+                <button class="faq-question" onclick="toggleAnswer('answer1')">
+                    Как выбрать лучшие ингредиенты для выпечки?
+                </button>
+                <div id="answer1" class="faq-answer">
+                    <p>Лучше всего выбирать свежие, качественные ингредиенты. Обратите внимание на срок годности и происхождение продуктов, чтобы ваши блюда получались вкусными и безопасными.</p>
+                </div>
+                </div>
+            
+                <div class="faq-item">
+                <button class="faq-question" onclick="toggleAnswer('answer2')">
+                    Как долго выпекать кексы?
+                </button>
+                <div id="answer2" class="faq-answer">
+                    <p>Время выпекания кексов зависит от их размера и температуры в духовке. Обычно это около 20-25 минут при температуре 180°C, но лучше проверять готовность с помощью зубочистки.</p>
+                </div>
+                </div>
+            
+                <div class="faq-item">
+                <button class="faq-question" onclick="toggleAnswer('answer3')">
+                    Как правильно хранить муку и сахар?
+                </button>
+                <div id="answer3" class="faq-answer">
+                    <p>Муку и сахар лучше хранить в герметичных контейнерах в сухом и прохладном месте, вдали от солнечного света, чтобы они не потеряли свои качества.</p>
+                </div>
+                </div>
+            
+                <div class="faq-item">
+                <button class="faq-question" onclick="toggleAnswer('answer4')">
+                    Можно ли заменить яйца в рецептах для веганов?
+                </button>
+                <div id="answer4" class="faq-answer">
+                    <p>Да, можно. Для замены яиц используют такие ингредиенты, как бананы, яблочное пюре, семена льна или аквафабу (воду от вареного нутового гороха).</p>
+                </div>
+                </div>
+            
+                <div class="faq-item">
+                <button class="faq-question" onclick="toggleAnswer('answer5')">
+                    Как предотвратить пересушивание теста?
+                </button>
+                <div id="answer5" class="faq-answer">
+                    <p>Чтобы тесто не получилось сухим, следите за точностью измерений и добавляйте масло или сливки по рецепту. Также избегайте излишнего замешивания теста.</p>
+                </div>
+                </div>
+            
+                <div class="faq-item">
+                <button class="faq-question" onclick="toggleAnswer('answer6')">
+                    Как понять, что кексы готовы?
+                </button>
+                <div id="answer6" class="faq-answer">
+                    <p>Чтобы проверить готовность кексов, вставьте деревянную шпажку в центр. Если она выходит чистой, значит, кексы готовы.</p>
+                </div>
+                </div>
+            
+                <div class="faq-item">
+                <button class="faq-question" onclick="toggleAnswer('answer7')">
+                    Нужно ли просеивать муку перед использованием?
+                </button>
+                <div id="answer7" class="faq-answer">
+                    <p>Просеивание муки помогает избавиться от комков и насытить муку воздухом, что делает выпечку более легкой и воздушной. Рекомендуется просеивать муку перед использованием, особенно в выпечке.</p>
+                </div>
+                </div>
+            
+                <div class="faq-item">
+                <button class="faq-question" onclick="toggleAnswer('answer8')">
+                    Как сделать тесто более мягким?
+                </button>
+                <div id="answer8" class="faq-answer">
+                    <p>Для более мягкого теста добавьте в него немного масла или сливок, а также не переборщите с мукой. Тесто должно быть мягким, но не слишком липким.</p>
+                </div>
+                </div>
+            
+                <div class="faq-item">
+                <button class="faq-question" onclick="toggleAnswer('answer9')">
+                    Как избежать потрескивания корки на пирогах?
+                </button>
+                <div id="answer9" class="faq-answer">
+                    <p>Чтобы избежать трещин на корке пирога, смазывайте его яйцом или молоком перед выпечкой и не открывайте духовку слишком часто во время процесса выпечки.</p>
+                </div>
+                </div>
+            
+                <div class="faq-item">
+                <button class="faq-question" onclick="toggleAnswer('answer10')">
+                    Как улучшить текстуру печенья?
+                </button>
+                <div id="answer10" class="faq-answer">
+                    <p>Для улучшения текстуры печенья используйте качественное масло и добавляйте немного крахмала в тесто, чтобы оно было более нежным. Также не забудьте об охлаждении теста перед выпеканием.</p>
+                </div>
+                </div>
+            </section>
+            
+            <script>
+                function toggleAnswer(answerId) {
+                var answer = document.getElementById(answerId);
+                // Показать или скрыть ответ по клику
+                answer.style.display = (answer.style.display === 'block') ? 'none' : 'block';
+                }
+
+            </script>
+  
+  
+
+
+
+                
+
+
 
                         <!-- Чат и информационный блок -->
                     <div class="container">
@@ -432,7 +544,7 @@
 
             <!-- Контакты конец -->
 
-
+</main>
                <!-- ФУТЕР -->
             <footer>
                 <div class="footer-container">
